@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
-import XrUI from '../packages';
-Vue.use(XrUI)
+// import test from '../packages';
+import test from 'nature-ui'
+Vue.use(test)
 
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(App),
+    render: h => h(App),
 }).$mount('#app')
