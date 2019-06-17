@@ -4,9 +4,12 @@
 
 <script>
 export default {
-    name: "XrTest"
+    name: "nt-button"
 }
 </script>
 
 <style>
+button {
+    background-color: red;
+}
 </style>

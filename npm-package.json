@@ -1,0 +1,13 @@
+{
+    "name": "nature-ui",
+    "version": "0.3.0",
+    "description": "基于vue的一套极简,酷炫,高质量的UI组件库",
+    "main": "dist/lib.umd.min.js",
+    "keywords": [
+        "nature-ui",
+        "vue-ui",
+        "vue"
+    ],
+    "private": false,
+    "license": "MIT"
+}
