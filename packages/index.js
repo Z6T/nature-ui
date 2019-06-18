@@ -1,7 +1,7 @@
-import natureTest from './button'
+import Button from './button'
 // 所有组件列表
 const components = [
-    natureTest
+    Button
 ]
 // 定义 install 方法，接收 Vue 作为参数
 const install = function (Vue) {

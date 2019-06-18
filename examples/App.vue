@@ -1,16 +1,14 @@
 <template>
     <div id="app">
-        <xr-test></xr-test>
+        <nt-button>按钮</nt-button>
+        <h1>llls</h1>
     </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
     name: "app",
     components: {
-        HelloWorld
     }
 };
 </script>

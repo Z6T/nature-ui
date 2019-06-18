@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-// import test from '../packages';
-import test from 'nature-ui'
-Vue.use(test)
+import packages from '../packages';
+// import test from 'nature-ui'
+Vue.use(packages)
 
 Vue.config.productionTip = false
 
