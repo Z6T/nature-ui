@@ -7,7 +7,6 @@ export default {
     name: "nt-button"
 }
 </script>
-
 <style>
 button {
     background-color: red;
