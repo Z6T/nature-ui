@@ -1,7 +1,6 @@
 <template>
     <div id="app">
         <nt-button>按钮</nt-button>
-        <h1>llls</h1>
     </div>
 </template>
 
