@@ -29,6 +29,8 @@
         "eslint-plugin-vue": "^5.0.0",
         "gulp": "^4.0.2",
         "node-sass": "^4.12.0",
+        "postcss-salad": "^2.0.1",
+        "precss": "^4.0.0",
         "sass-loader": "^7.1.0",
         "vue-template-compiler": "^2.6.10"
     },
@@ -48,7 +50,26 @@
     },
     "postcss": {
         "plugins": {
-            "autoprefixer": {}
+            "autoprefixer": {},
+            "postcss-salad": {
+                "browsers": [
+                    "ie > 8",
+                    "last 2 versions"
+                ],
+                "features": {
+                    "bem": {
+                        "shortcuts": {
+                            "component": "b",
+                            "descendent": "e",
+                            "modifier": "m"
+                        },
+                        "separators": {
+                            "descendent": "__",
+                            "modifier": "_"
+                        }
+                    }
+                }
+            }
         }
     },
     "browserslist": [

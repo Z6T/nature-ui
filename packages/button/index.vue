@@ -9,7 +9,9 @@
         }]"
             @click="handleClick"
         >
-            <slot></slot>
+            <span class="nt-button__msg">
+                <slot></slot>
+            </span>
         </button>
     </div>
 </template>
