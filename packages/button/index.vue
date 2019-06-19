@@ -22,11 +22,6 @@ export default {
         }
     },
     props: {
-        tag: {
-            type: String,
-            defaut: 'button',
-            required: false
-        },
         type: {
             validator(t) {
                 return ['default', 'primary', 'danger', 'warn'].indexOf(t) > -1;

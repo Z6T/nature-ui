@@ -7,7 +7,7 @@ var postcss = require('gulp-postcss');
 //gulp文件流：src表示源头->pipe表示管道->dest表示终点
 gulp.task('css', function () {
     return gulp.src('./src/*.css')
-        .pipe(concat('style.css')) //通过concat将css文件拼接成一个叫做style.css的文件
+        .pipe(concat('nature.css')) //通过concat将css文件拼接成一个叫做style.css的文件
         .pipe(
             postcss([
                 require('autoprefixer'),
@@ -36,7 +36,7 @@ gulp.task('css', function () {
         .pipe(rename({
             suffix: '.min' //rename只是给上一步骤产出的压缩的styles.css重命名为style.min.css
         }))
-        .pipe(gulp.dest('../../lib/css')) //dest方法把上一步骤产出的style.min.css输出到“./dist/css”目录下（gulp流的终点）
+        .pipe(gulp.dest('../../lib/styles')) //dest方法把上一步骤产出的style.min.css输出到“./dist/css”目录下（gulp流的终点）
 });
 
 // gulp.task('build', ['css'])
