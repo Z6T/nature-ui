@@ -1,10 +1,9 @@
 import Vue from 'vue'
-import vui from '*/index.js';
-Vue.use(vui)
-const { Hello } = vui
-Vue.component(Hello.name, Hello)
 import App from './App.vue'
-
+import packages from '../packages';
+// import test from 'nature-ui'
+Vue.use(packages)
+import '../packages/nt-styles/index.css'
 Vue.config.productionTip = false
 
 new Vue({

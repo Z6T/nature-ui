@@ -1,0 +1,6 @@
+@b nt-button{
+    background-color:green;
+    @e msg{
+        color:green;
+    }
+}
