@@ -1,24 +1,26 @@
 <template>
-    <div>
-        <button
-            class="nt-button"
-            :disabled="disabled"
-            :class="['nt-button'+type,'nt-button'+size,{
-            'nt-button-disbled':disabled,
-            'nt-button-long':long
+    <button
+        class="nt-button"
+        :disabled="isDisabled"
+        :class="['nt-button_'+type,'nt-button_'+size,{
+            'nt-button_disabled':isDisabled,
+            'nt-button_long':long
         }]"
-            @click="handleClick"
-        >
-            <span class="nt-button__msg">
-                <slot></slot>
-            </span>
-        </button>
-    </div>
+        @click="handleClick"
+    >
+        <span class="nt-button__icon"></span>
+        <slot></slot>
+    </button>
 </template>
 
 <script>
 export default {
     name: "NtButton",
+    data() {
+        return {
+            isDisabled: !!this.disabled
+        }
+    },
     props: {
         tag: {
             type: String,
@@ -27,7 +29,7 @@ export default {
         },
         type: {
             validator(t) {
-                return ['default', 'primary', 'warn'].indexOf(t) > -1;
+                return ['default', 'primary', 'danger', 'warn'].indexOf(t) > -1;
             },
             default: 'default',
             required: false
@@ -59,5 +61,3 @@ export default {
     }
 }
 </script>
-<style>
-</style>

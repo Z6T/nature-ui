@@ -36,7 +36,7 @@ gulp.task('css', function () {
         .pipe(rename({
             suffix: '.min' //rename只是给上一步骤产出的压缩的styles.css重命名为style.min.css
         }))
-        .pipe(gulp.dest('./lib')) //dest方法把上一步骤产出的style.min.css输出到“./dist/css”目录下（gulp流的终点）
+        .pipe(gulp.dest('../../lib/css')) //dest方法把上一步骤产出的style.min.css输出到“./dist/css”目录下（gulp流的终点）
 });
 
 // gulp.task('build', ['css'])

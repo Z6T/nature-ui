@@ -1,6 +1,75 @@
 @b nt-button{
-    background-color:green;
-    @e msg{
-        color:green;
+    display: inline-block;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    font-weight:400;
+    border: none;
+    border-radius: 2px;
+    outline:none;
+    @e icon{
+        /* color:green; */
     }
+    @m default{
+        border:1px solid #ccc;
+        color:#000;
+        cursor: pointer;
+        &:hover{
+            border-color:#339999;
+            opacity: 0.8;
+        }
+    }
+    @m primary{
+        background-color: #339999;
+        cursor: pointer;
+        &:hover{
+            border-color:#339999;
+            opacity: 0.8;
+        }
+    }
+    @m danger{
+        background-color: #FF5722;
+        cursor: pointer;
+        &:hover{
+            border-color:#339999;
+            opacity: 0.8;
+        }
+    }
+    @m warn{
+        background-color: #FFB802;
+        cursor: pointer;
+        &:hover{
+            border-color:#339999;
+            opacity: 0.8;
+        }
+    }
+    @m normal{
+        height: 38px;
+        padding: 0 18px;
+        line-height: 38px;
+        font-size: 14px;
+    }
+    @m large{
+        height: 44px;
+        padding: 0 18px;
+        line-height: 44px;
+        font-size: 14px;
+    }
+    @m small{
+        height: 26px;
+        padding: 0 4px;
+        line-height: 24px;
+    }
+    @m long{
+        width:100%;
+    }
+    @m disabled{
+        opacity: 0.5;
+        &:hover{
+            border-color:#339999;
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+  
 }
