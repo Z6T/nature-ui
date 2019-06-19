@@ -1,13 +1,23 @@
 {
     "name": "nature-ui",
-    "version": "0.1.0",
-    "private": true,
+    "version": "0.3.4",
+    "author": "zhangtao",
+    "description": "基于vue的一套极简,酷炫,高质量的UI组件库",
+    "main": "lib/nature-ui.umd.min.js",
+    "keywords": [
+        "nature-ui",
+        "vue-ui",
+        "vue"
+    ],
+    "private": false,
+    "license": "MIT",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
         "commit": "git-cz",
-        "lib": "vue-cli-service build --target lib --dest lib packages/index.js"
+        "lib": "vue-cli-service build --target lib --dest lib packages/index.js",
+        "lib-css": "gulp css --gulpfile packages/nt-styles/gulpfile.js"
     },
     "config": {
         "commitizen": {
@@ -16,6 +26,7 @@
     },
     "dependencies": {
         "core-js": "^2.6.5",
+        "nature-ui": "^0.3.4",
         "vue": "^2.6.10"
     },
     "devDependencies": {

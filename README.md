@@ -1,4 +1,4 @@
-# biu-ui
+# nature-ui
 
 ## Project setup
 ```
