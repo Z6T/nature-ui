@@ -1,7 +1,12 @@
+
 import Button from './button'
+import Checkbox from './checkbox'
+import CheckboxList from './checkboxlist'
 // 所有组件列表
 const components = [
-    Button
+    Button,
+    Checkbox,
+    CheckboxList
 ]
 // 定义 install 方法，接收 Vue 作为参数
 const install = function (Vue) {

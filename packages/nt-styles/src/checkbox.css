@@ -1,0 +1,22 @@
+@b nt-checkbox {
+  display: inline-block;
+  user-select: none;
+  cursor: pointer;
+  @e icon {
+    margin-right: 4px;
+    font-size: 14px;
+    color: var(--base_color);
+  }
+  @e txt {
+    /* line-height:1px; */
+    font-size: 14px;
+    letter-spacing: 1px;
+    @m isChecked {
+      color: var(--base_color);
+    }
+  }
+  input {
+    -webkit-appearance: none;
+    outline: none;
+  }
+}

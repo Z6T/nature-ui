@@ -15,15 +15,15 @@
         color:#000;
         cursor: pointer;
         &:hover{
-            border-color:#339999;
+            border-color:var(--base_color);
             opacity: 0.8;
         }
     }
     @m primary{
-        background-color: #339999;
+        background-color: var(--base_color);
         cursor: pointer;
         &:hover{
-            border-color:#339999;
+            border-color:var(--base_color);
             opacity: 0.8;
         }
     }
@@ -31,7 +31,7 @@
         background-color: #FF5722;
         cursor: pointer;
         &:hover{
-            border-color:#339999;
+            border-color:var(--base_color);
             opacity: 0.8;
         }
     }
@@ -39,7 +39,7 @@
         background-color: #FFB802;
         cursor: pointer;
         &:hover{
-            border-color:#339999;
+            border-color:var(--base_color);
             opacity: 0.8;
         }
     }
@@ -66,7 +66,7 @@
     @m disabled{
         opacity: 0.5;
         &:hover{
-            border-color:#339999;
+            border-color:var(--base_color);
             opacity: 0.5;
             cursor: not-allowed;
         }
