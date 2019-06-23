@@ -1,5 +1,5 @@
 <template>
-  <div class="nt-checkbox" @click="handleClick">
+  <div class="nt-checkbox" @click="handleClick" :class="[hasBorder?'nt-checkbox_border':'',isChecked?'nt-checkbox_border_checked':'']">
     <input
       type="checkbox"
       name
@@ -26,6 +26,7 @@ export default {
   },
   props: {
     value: [Boolean, String],
+    border:String,
     disabled: {
       type: Boolean,
       default: false
@@ -44,15 +45,15 @@ export default {
       }
       return "";
     },
-    shouldChecked: {
-      get() {},
-      set(val) {
-        console.log(this);
-        this.isChecked = val;
-      }
+    hasBorder(){
+      return this.hasProp('border');
     }
   },
   methods: {
+    hasProp(name){
+      let props = this.$options.propsData;
+      return props.hasOwnProperty(name);
+    },
     initCheck() {
       if (this.isGroup) {
         this.isChecked = this.groupValue.indexOf(this.curValue) > -1;

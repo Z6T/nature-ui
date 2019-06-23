@@ -8,13 +8,16 @@
         <nt-button type="danger" size="small" :long="true">百搭按钮</nt-button>------
         <nt-button type="warn" @click="query" :disabled="false">查询</nt-button>------
 
-        <nt-checkbox  v-model="checked1">备选1</nt-checkbox>  {{checked1}}
-        <nt-checkbox v-model="checked2">备选2</nt-checkbox>{{checked2}}
+        <nt-checkbox  v-model="checked1" border>备选1</nt-checkbox> 
+        <nt-checkbox v-model="checked2" border>备选2</nt-checkbox>
 
         <nt-checkbox-list v-model="list" @change="handChange">
             <nt-checkbox  value="one">备选1</nt-checkbox>  {{checked1}}
             <nt-checkbox value="two">备选2</nt-checkbox>{{checked2}}
         </nt-checkbox-list> {{list}}
+
+
+       <nt-date-picker></nt-date-picker>
     </div>
 </template>
 
