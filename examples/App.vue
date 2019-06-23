@@ -11,7 +11,7 @@
         <nt-checkbox  v-model="checked1">备选1</nt-checkbox>  {{checked1}}
         <nt-checkbox v-model="checked2">备选2</nt-checkbox>{{checked2}}
 
-        <nt-checkbox-list v-model="list">
+        <nt-checkbox-list v-model="list" @change="handChange">
             <nt-checkbox  value="one">备选1</nt-checkbox>  {{checked1}}
             <nt-checkbox value="two">备选2</nt-checkbox>{{checked2}}
         </nt-checkbox-list> {{list}}
@@ -36,6 +36,9 @@ export default {
         query(e) {
             // eslint-disable-next-line no-console
             console.log(e);
+        },
+        handChange(val){
+            alert(val)
         }
     }
 };

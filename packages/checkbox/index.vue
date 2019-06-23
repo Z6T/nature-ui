@@ -58,7 +58,7 @@ export default {
         this.isChecked = this.groupValue.indexOf(this.curValue) > -1;
       } else if (typeof this.curValue !== "boolean") {
         throw new Error("单个checkbox要求v-model绑定Boolean");
-      }else{
+      } else {
         this.isChecked = this.curValue;
       }
     },
@@ -72,22 +72,25 @@ export default {
         if (this.isChecked) {
           gVal.push(cVal);
         } else {
-          let index = gVal.indexOf(cVal)
-          gVal.splice(index,1);
+          let index = gVal.indexOf(cVal);
+          gVal.splice(index, 1);
         }
         this.$parent.$emit("input", gVal);
+        this.handleChange(gVal);
       } else {
         this.$emit("input", this.isChecked);
+        this.handleChange(this.isChecked);
       }
     },
-    handleChange() {
-      //  alert(888)
+    handleChange(val) {
+      typeof val === "boolean"
+        ? this.$emit("change", val)
+        : this.$parent.$emit("change", val);
     }
   },
   created() {
     this.initCheck();
     console.log(this.groupValue);
-    
   }
 };
 </script>
