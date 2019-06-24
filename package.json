@@ -1,6 +1,6 @@
 {
     "name": "nature-ui",
-    "version": "0.3.4",
+    "version": "0.3.6",
     "author": "zhangtao",
     "description": "基于vue的一套极简,酷炫,高质量的UI组件库",
     "main": "lib/nature-ui.umd.min.js",
