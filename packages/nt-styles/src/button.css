@@ -5,13 +5,14 @@
     text-align: center;
     font-weight:400;
     border: none;
-    border-radius: 2px;
+    border-radius: 4px;
     outline:none;
     @e icon{
         /* color:green; */
     }
     @m default{
-        border:1px solid #ccc;
+        border: 1px solid;
+        border-color: val(--base_border_color);
         color:#000;
         cursor: pointer;
         &:hover{

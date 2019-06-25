@@ -18,7 +18,8 @@
         </nt-checkbox-list>
         {{list}}
         <h1></h1>
-        <nt-date-picker></nt-date-picker>
+        <nt-date-picker v-model="date" @change="handledate"></nt-date-picker>
+        ---{{date}}
         <!-- <h1>你好</h1> -->
     </div>
 </template>
@@ -32,7 +33,8 @@ export default {
             value2: '',
             checked1: false,
             checked2: true,
-            list: ['one']
+            list: ['one'],
+            date: ''
         }
     },
     components: {
@@ -44,10 +46,20 @@ export default {
         },
         handChange(val) {
             alert(val)
+        },
+        handledate(val, old) {
+            alert(val);
+            alert(old)
         }
     }
 };
 </script>
 
 <style>
+#app {
+    padding: 0 100px;
+}
+#app > * {
+    margin: 20px;
+}
 </style>

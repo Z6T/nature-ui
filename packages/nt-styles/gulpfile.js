@@ -6,7 +6,7 @@ var postcss = require('gulp-postcss');
 
 //gulp文件流：src表示源头->pipe表示管道->dest表示终点
 gulp.task('css', function () {
-    return gulp.src('./src/*.css')
+    return gulp.src('./index.css')
         .pipe(concat('nature.css')) //通过concat将css文件拼接成一个叫做style.css的文件
         .pipe(
             postcss([

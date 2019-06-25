@@ -1,6 +1,12 @@
 <template>
     <div class="nt-date" @click="stopBlur">
-        <input type="text" ref="dateInput" class="nt-date-picker__input" :value="dateText">
+        <input
+            type="text"
+            ref="dateInput"
+            class="nt-date-picker__input"
+            :placeholder="placeholder"
+            :value="dateText"
+        >
         <i class="icon-nt-date iconfont nt-date__dateicon"></i>
         <i class="icon-nt-remove iconfont nt-date__remove" @click="selectDate={}"></i>
         <div class="nt-date-picker" v-show="true">
@@ -38,6 +44,15 @@ export default {
             selectDate: {}
         }
     },
+    props: {
+        placeholder: {
+            type: String,
+            default: '选择日期'
+        },
+        value: {
+            type: String
+        }
+    },
     components: { MainTable, YearTable, MonthTable },
     provide() {
         return {
@@ -48,7 +63,7 @@ export default {
         dateText() {
             const { year, month, date } = this.selectDate;
             if (year && month && date) {
-                return year + '-' + month + '-' + date
+                return year + '-' + ('0' + month).slice(-2) + '-' + ('0' + date).slice(-2)
             }
             return '';
         },

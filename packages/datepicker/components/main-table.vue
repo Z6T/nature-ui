@@ -88,7 +88,12 @@ export default {
             }
             date.date = d;
             const { year, month, date: sDate } = date;
+            let oldVal = this.$parent.dateText;
             this.$parent.selectDate = { year, month, date: sDate };
+            this.$parent.$emit('input', this.$parent.dateText);
+            // 处理change事件
+            this.$parent.$emit('change', this.$parent.dateText, oldVal);
+
         }
     },
     computed: {
