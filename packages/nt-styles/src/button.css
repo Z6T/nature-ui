@@ -25,6 +25,8 @@
     @m primary{
         background-color: var(--base_color);
         cursor: pointer;
+        border: 1px solid;
+        border-color: val(--base_border_color);
         &:hover{
             border-color:var(--base_color);
             opacity: 0.8;
@@ -33,6 +35,8 @@
     @m danger{
         background-color: #FF5722;
         cursor: pointer;
+        border: 1px solid;
+        border-color: val(--base_border_color);
         &:hover{
             border-color:var(--base_color);
             opacity: 0.8;
@@ -40,7 +44,8 @@
     }
     @m warn{
         background-color: #FFB802;
-        cursor: pointer;
+        cursor: pointer;border: 1px solid;
+        border-color: val(--base_border_color);
         &:hover{
             border-color:var(--base_color);
             opacity: 0.8;
@@ -60,7 +65,7 @@
     }
     @m small{
         height: 26px;
-        padding: 0 4px;
+        padding: 0 8px;
         line-height: 24px;
     }
     @m long{

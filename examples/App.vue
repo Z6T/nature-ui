@@ -11,7 +11,7 @@
         <nt-checkbox v-model="checked2" border>备选2</nt-checkbox>
 
         <nt-checkbox-list v-model="list" @change="handChange">
-            <nt-checkbox value="one">备选1</nt-checkbox>
+            <nt-checkbox value="one" :disabled="true">备选1</nt-checkbox>
             {{checked1}}
             <nt-checkbox value="two">备选2</nt-checkbox>
             {{checked2}}
@@ -20,13 +20,15 @@
         <h1></h1>
         <nt-date-picker v-model="date" @change="handledate"></nt-date-picker>
         ---{{date}}
-        <Dialog/>
+        <!-- <nt-dialog></nt-dialog> -->
+        <button @click="showModal">点击</button>
+        <!-- <nt-dialog></nt-dialog> -->
         <!-- <h1>你好</h1> -->
     </div>
 </template>
 
 <script>
-import Dialog from './components/dialog'
+
 
 export default {
     name: "app",
@@ -40,9 +42,6 @@ export default {
             date: ''
         }
     },
-    components: {
-        Dialog
-    },
     methods: {
         query(e) {
             // eslint-disable-next-line no-console
@@ -52,8 +51,19 @@ export default {
             alert(val)
         },
         handledate(val, old) {
-            console.log('^^^^^^* val *^^^^^^', val);
-            console.log('^^^^^^* old *^^^^^^', old);
+            // console.log('^^^^^^* val *^^^^^^', val);
+            // console.log('^^^^^^* old *^^^^^^', old);
+        },
+        showModal() {
+            this.$dialog({
+                justOkBtn: false,
+                confirm() {
+                    console.log(999);
+                    this.dialogClose()
+                }
+            }).then(() => {
+                alert('success')
+            });
         }
     }
 };
