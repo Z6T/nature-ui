@@ -70,7 +70,7 @@ export default {
         curText() {
             const { year, month, date } = this.curDay;
             if (year && month && date) {
-                return year + '-' + month + '-' + date
+                return year + '-' + ('0' + month).slice(-2) + '-' + ('0' + date).slice(-2)
             }
             return '';
         }
