@@ -6,8 +6,8 @@
         <br>
         <nt-button type="primary" :disabled="false">百搭按钮</nt-button>------
         <nt-button type="danger" size="small" :long="true">百搭按钮</nt-button>------
-        <nt-button type="warn" @click="query" :disabled="false">查询</nt-button>------
-        <nt-checkbox v-model="checked1" border>备选1</nt-checkbox>
+        <nt-button type="warn" @click="query" :disabled="true">查询</nt-button>------
+        <nt-checkbox v-model="checked1" border :disabled="true">备选1</nt-checkbox>
         <nt-checkbox v-model="checked2" border>备选2</nt-checkbox>
 
         <nt-checkbox-list v-model="list" @change="handChange">

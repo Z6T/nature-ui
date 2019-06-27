@@ -2,6 +2,10 @@
   display: inline-block;
   user-select: none;
   cursor: pointer;
+  @m disabled{
+    opacity: 0.5;
+    cursor:not-allowed;
+  }
   @m border{
     padding: 6px 20px 0px 10px;
     border-radius: 2px;

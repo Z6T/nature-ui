@@ -2,11 +2,12 @@
     <div
         class="nt-checkbox"
         @click="handleClick"
-        :class="[hasBorder?'nt-checkbox_border':'',isChecked?'nt-checkbox_border_checked':'']"
+        :class="[hasBorder?'nt-checkbox_border':'',isChecked?'nt-checkbox_border_checked':'',
+        disabled?'nt-checkbox_disabled':'']"
     >
         <input
             type="checkbox"
-            name
+            :disable="disabled"
             :class="[isChecked?'icon-nt-checkbox_checked':'icon-nt-checkbox_unchecked','iconfont','nt-checkbox__icon']"
             @change="handleChange"
         >
@@ -68,23 +69,25 @@ export default {
             }
         },
         handleClick() {
-            this.isChecked = !this.isChecked;
-            let isG = this.isGroup;
-            let gVal = this.groupValue;
-            let cVal = this.curValue;
-            if (isG) {
-                let gValue = gVal;
-                if (this.isChecked) {
-                    gVal.push(cVal);
+            if (!this.disabled) {
+                this.isChecked = !this.isChecked;
+                let isG = this.isGroup;
+                let gVal = this.groupValue;
+                let cVal = this.curValue;
+                if (isG) {
+                    let gValue = gVal;
+                    if (this.isChecked) {
+                        gVal.push(cVal);
+                    } else {
+                        let index = gVal.indexOf(cVal);
+                        gVal.splice(index, 1);
+                    }
+                    this.$parent.$emit("input", gVal);
+                    this.handleChange(gVal);
                 } else {
-                    let index = gVal.indexOf(cVal);
-                    gVal.splice(index, 1);
+                    this.$emit("input", this.isChecked);
+                    this.handleChange(this.isChecked);
                 }
-                this.$parent.$emit("input", gVal);
-                this.handleChange(gVal);
-            } else {
-                this.$emit("input", this.isChecked);
-                this.handleChange(this.isChecked);
             }
         },
         handleChange(val) {
@@ -95,7 +98,6 @@ export default {
     },
     created() {
         this.initCheck();
-        console.log(this.groupValue);
     }
 };
 </script>
