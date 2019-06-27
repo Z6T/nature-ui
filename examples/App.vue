@@ -20,11 +20,14 @@
         <h1></h1>
         <nt-date-picker v-model="date" @change="handledate"></nt-date-picker>
         ---{{date}}
+        <Dialog/>
         <!-- <h1>你好</h1> -->
     </div>
 </template>
 
 <script>
+import Dialog from './components/dialog'
+
 export default {
     name: "app",
     data() {
@@ -38,6 +41,7 @@ export default {
         }
     },
     components: {
+        Dialog
     },
     methods: {
         query(e) {
@@ -48,8 +52,8 @@ export default {
             alert(val)
         },
         handledate(val, old) {
-            alert(val);
-            alert(old)
+            console.log('^^^^^^* val *^^^^^^', val);
+            console.log('^^^^^^* old *^^^^^^', old);
         }
     }
 };

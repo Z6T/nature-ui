@@ -34,7 +34,7 @@
                 <div
                     areatag="cur"
                     class="nt-date-picker__content__body__cell"
-                    :class="[year_month + avilitem===ntDatePicker.dateText?
+                    :class="[year_month + ('0'+avilitem).slice(-2)===ntDatePicker.dateText?
                     'nt-date-picker__content__body__cell_active':'',year_month + avilitem===ntDatePicker.curText?
                     'nt-date-picker__content__body__cell_curDay':'']"
                     v-for="(avilitem,index) in main_avilaDate"
@@ -90,7 +90,7 @@ export default {
             const { year, month, date: sDate } = date;
             let oldVal = this.$parent.dateText;
             this.$parent.selectDate = { year, month, date: sDate };
-            this.$parent.$emit('input', this.$parent.dateText);
+            this.$parent.$emit('input', this.$parent.dateText); // 给父组件传值
             // 处理change事件
             this.$parent.$emit('change', this.$parent.dateText, oldVal);
 
@@ -99,7 +99,7 @@ export default {
     computed: {
         year_month() {
             const { year, month } = this.main_curDate;
-            return year + '-' + month + '-'
+            return year + '-' + ('0' + month).slice(-2) + '-';
         }
     },
     watch: {

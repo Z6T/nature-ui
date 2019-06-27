@@ -4,7 +4,9 @@
     white-space: nowrap;
     text-align: center;
     font-weight:400;
-    border: none;
+    /* border: none; */
+    border: 1px solid;
+    border-color: val(--base_border_color); 
     border-radius: 4px;
     outline:none;
     @e icon{
@@ -52,7 +54,7 @@
     }
     @m large{
         height: 44px;
-        padding: 0 18px;
+        padding: 0 22px;
         line-height: 44px;
         font-size: 14px;
     }
