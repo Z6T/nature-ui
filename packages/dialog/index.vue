@@ -1,5 +1,5 @@
 <template>
-    <div class="nt-dialog nt-dialog_mask" v-if="dialogShow">
+    <div class="nt-dialog" :class="showMask?'nt-dialog_mask':''" v-if="dialogShow">
         <div class="nt-dialog__content">
             <div class="nt-dialog__content__header" v-if="showHeader">{{title}}</div>
             <div class="nt-dialog__content__body" v-html="body">
@@ -29,6 +29,10 @@ export default {
         }
     },
     props: {
+        showMask: {
+            type: Boolean,
+            default: false
+        },
         justOkBtn: {
             type: Boolean,
             default: false
