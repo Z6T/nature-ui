@@ -1,6 +1,7 @@
 <template>
     <div id="app">
-        <nt-select></nt-select>
+        <nt-select :options="options" v-model="sVal"></nt-select>
+        ==={{sVal}}
         <nt-select></nt-select>
         <hr>
         <nt-button size="large">默认按钮</nt-button>-------
@@ -44,7 +45,18 @@ export default {
             checked1: false,
             checked2: true,
             list: ['one'],
-            date: ''
+            date: '',
+            options: [{
+                text: '苹果',
+                value: '1'
+            }, {
+                text: '🍐',
+                value: '2'
+            }, {
+                text: '香蕉',
+                value: '3'
+            }],
+            sVal: '3'
         }
     },
     methods: {

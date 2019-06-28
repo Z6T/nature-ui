@@ -7,7 +7,7 @@
             readonly
             placeholder="请选择"
             ref="ntselect_input"
-            :value="selectItem.text"
+            :value="selectItem.text||selectText"
         >
         <i class="iconfont" :class="showUl?'icon-arrowTop':'icon-arrowBottom'"></i>
         <ul class="nt-select__ul" v-show="showUl" @mousedown="selectItemEv">
@@ -29,19 +29,23 @@ export default {
         return {
             showUl: false,
             selectItem: {
-                value: null,
-                text: null
+                value: this.value,
+                text: ''
             },
-            options: [{
-                text: '苹果',
-                value: '1'
-            }, {
-                text: '🍐',
-                value: '2'
-            }, {
-                text: '香蕉',
-                value: '3'
-            },],
+        }
+    },
+    props: {
+        options: {
+            type: Array
+        },
+        value: [String, Number, Boolean]
+    },
+    computed: {
+        // eslint-disable-next-line vue/return-in-computed-property
+        selectText() {
+            if (this.value) {
+                return this.options.filter(item => item.value === this.value)[0].text;
+            }
         }
     },
     methods: {
@@ -49,10 +53,7 @@ export default {
             const ele = e.target;
             let [text, value] = [ele.innerText, ele.getAttribute('value')]
             this.selectItem = { text, value }
-
-            // if (this.$refs.ntselectwapper.contains(ele)) {
-            //     this.stopBlur = true
-            // }
+            this.$emit('input', this.selectItem.value)
         }
     },
     mounted() {
