@@ -158,9 +158,9 @@ export default {
         this.$refs.dateInput.onfocus = function (e) {
             self.showPanel = true;
         },
-            document.onclick = function () {
+            document.addEventListener('click', function () {
                 self.showPanel = false;
-            }
+            })
     },
 }
 </script>

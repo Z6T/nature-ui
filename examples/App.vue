@@ -19,6 +19,8 @@
         {{list}}
         <h1></h1>
         <nt-date-picker v-model="date" @change="handledate"></nt-date-picker>
+        <nt-date-picker v-model="date" @change="handledate"></nt-date-picker>
+        <nt-date-picker v-model="date" @change="handledate"></nt-date-picker>
         ---{{date}}
         <!-- <nt-dialog></nt-dialog> -->
         <button @click="showModal">点击</button>
@@ -59,7 +61,7 @@ export default {
                 justOkBtn: false,
                 confirm() {
                     console.log(999);
-                    this.dialogClose()
+                    // this.dialogClose()
                 }
             }).then(() => {
                 alert('success')
