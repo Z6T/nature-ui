@@ -1,0 +1,69 @@
+@b nt-select{
+    position: relative;
+    display: inline-block;
+    font-size:14px;
+    i{
+        position: relative;
+        right: 22px;
+        color: #9aa1b1;
+    }
+    input{
+        font-size:14px;
+        width: 160px;
+        height: 30px;
+        margin-bottom: 3px;
+        -webkit-appearance: none;
+        background-color: #fff;
+        background-image: none;
+        border-radius: 4px;
+        border: 1px solid #dcdfe6;
+        box-sizing: border-box;
+        color: #606266;
+        display: inline-block;
+        line-height: 1;
+        padding: 0 15px;
+        transition: border-color .2s ;
+        outline:none;
+        cursor: pointer;
+       
+        &:focus{
+            border-color:var(--base_color);
+        }
+    }
+    @e ul{
+        position: absolute;
+        z-index: 9999;
+        width: 200px;
+        padding-left:0;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        margin: 5px 0;
+        border: 1px solid #e4e7ed;
+        border-radius: 4px;
+        list-style:none;
+        background-color: #fff;
+        box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+        box-sizing: border-box;
+        @e li{
+            padding:4px 15px;
+            color:#333;
+            cursor: pointer;
+            @m selected{
+                color: var(--base_color);
+                background-color: #efefef;
+            }
+        }
+        &:before{
+            display:block;
+            content:'';
+            border-width:8px 8px 8px 8px;
+            border-style:solid;
+            border-color:transparent transparent #fff transparent;
+            
+            /* 定位 */
+            position:absolute;
+            left:20%;
+            top:-16px;
+        }
+    }
+}

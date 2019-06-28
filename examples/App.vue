@@ -1,5 +1,8 @@
 <template>
     <div id="app">
+        <nt-select></nt-select>
+        <nt-select></nt-select>
+        <hr>
         <nt-button size="large">默认按钮</nt-button>-------
         <nt-button>默认按钮</nt-button>-------
         <nt-button size="small">默认按钮</nt-button>
