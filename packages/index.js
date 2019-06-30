@@ -5,6 +5,7 @@ import CheckboxList from './checkboxlist'
 import Datepicker from './datepicker'
 import { Dialog, dialogInstance } from './dialog/index.js';
 import Select from './select';
+import Tree from './tree';
 
 
 
@@ -16,7 +17,8 @@ const components = [
     Datepicker,
     Dialog,
     dialogInstance,
-    Select
+    Select,
+    Tree
 ]
 // 定义 install 方法，接收 Vue 作为参数
 const install = function (Vue) {

@@ -1,5 +1,9 @@
 <template>
     <div id="app">
+        <nt-tree>
+            
+        </nt-tree>
+        <hr>
         <nt-select :options="options" v-model="sVal"></nt-select>
         ==={{sVal}}
         <nt-select></nt-select>
