@@ -31,8 +31,9 @@
 }
 @b nt-date-picker {
     position: absolute;
-    margin-top: 3px;
+    z-index: 999999;
     width:256px;
+    margin-top: 3px;
     text-align:center;
     box-shadow:0 2px 12px 0 rgba(0,0,0,.1);
     background-color:#fff;

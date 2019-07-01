@@ -6,8 +6,7 @@ import Datepicker from './datepicker'
 import { Dialog, dialogInstance } from './dialog/index.js';
 import Select from './select';
 import loadingbar from './loadingbar/index.js';
-
-
+import Tree from './tree';
 
 // 所有组件列表
 const components = [
@@ -18,7 +17,8 @@ const components = [
     Dialog,
     dialogInstance,
     Select,
-    loadingbar
+    loadingbar,
+    Tree
 ]
 // 定义 install 方法，接收 Vue 作为参数
 const install = function (Vue) {
