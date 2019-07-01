@@ -28,8 +28,9 @@
         ---{{date}}
         <!-- <nt-dialog></nt-dialog> -->
         <button @click="showModal">点击</button>
-        <!-- <nt-dialog></nt-dialog> -->
-        <!-- <h1>你好</h1> -->
+        <button @click="showPageloading">start</button>
+        <button @click="finnishPageloading">finish</button>
+        <button @click="errorloading">error</button>
     </div>
 </template>
 
@@ -47,13 +48,13 @@ export default {
             list: ['one'],
             date: '',
             options: [{
-                text: '苹果',
+                text: '🍎',
                 value: '1'
             }, {
                 text: '🍐',
                 value: '2'
             }, {
-                text: '香蕉',
+                text: '🍌',
                 value: '3'
             }],
             sVal: '3'
@@ -81,6 +82,15 @@ export default {
             }).then(() => {
                 alert('success')
             });
+        },
+        showPageloading() {
+            this.$loadingbar.start();
+        },
+        finnishPageloading() {
+            this.$loadingbar.finish();
+        },
+        errorloading() {
+            this.$loadingbar.error();
         }
     }
 };

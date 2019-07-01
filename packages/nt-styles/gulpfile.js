@@ -1,8 +1,8 @@
-const gulp = require('gulp')
-const cssmin = require('gulp-cssmin')
-const rename = require('gulp-rename')
-const concat = require('gulp-concat')
-var postcss = require('gulp-postcss');
+const gulp = require('./node_modules/gulp')
+const cssmin = require('./node_modules/gulp-cssmin')
+const rename = require('./node_modules/gulp-rename')
+const concat = require('./node_modules/gulp-concat')
+var postcss = require('./node_modules/gulp-postcss');
 
 //gulp文件流：src表示源头->pipe表示管道->dest表示终点
 gulp.task('css', function () {
@@ -10,8 +10,8 @@ gulp.task('css', function () {
         .pipe(concat('nature.css')) //通过concat将css文件拼接成一个叫做style.css的文件
         .pipe(
             postcss([
-                require('autoprefixer'),
-                require('postcss-salad')({
+                require('./node_modules/autoprefixer'),
+                require('./node_modules/postcss-salad')({
                     "browsers": [
                         "ie > 8",
                         "last 2 versions"
