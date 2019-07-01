@@ -82,6 +82,7 @@ export default {
             handler(newVal) {
                 this.treeData = newVal
             },
+            
             deep: true,
             immediate: true
         }
