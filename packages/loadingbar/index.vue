@@ -28,10 +28,12 @@ export default {
     },
     methods: {
         go() {
+            console.log('go');
+
             this.progressVal += this.step;
             this.barColor = 'green'
             setTimeout(() => {
-                if (this.progressVal < 90) {
+                if (this.progressVal < 94) {
                     this.go();
                 }
             }, 20);
@@ -40,7 +42,7 @@ export default {
             this.progressVal = 100;
             setTimeout(() => {
                 this.opcy = 0;
-            }, 300);
+            }, 500);
         },
         color16() {//十六进制颜色随机
             var r = Math.floor(Math.random() * 256);
