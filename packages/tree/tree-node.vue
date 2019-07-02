@@ -1,5 +1,5 @@
 <template>
-    <ul v-if="data&&data.length">
+    <ul v-if="data&&data.length" v-show="vLeval.length===3||curCpmponentShow">
         <li
             v-for="(item,i) in treeData"
             :key="i"
@@ -12,8 +12,11 @@
             :nt-tree-leval="vLeval+i"
             :isFolder="!!(item&&item.children)"
         >
-            <span>{{item.label}}---> {{vLeval+i}}---->{{!!item.children}} ======</span>
-            <tree-node :data="item.children" :vLeval="vLeval+i+'-'"></tree-node>
+        <div  @click="expandNode(i)">
+            <i class="iconfont" :class="!this_expand?'icon-tree-right':'icon-tree-down'" v-if="item.children&&item.children.length"></i>
+            <span :isLastNode="!item.children" :expand="this_expand">{{item.label}}---> {{vLeval+i}}---->{{!!item.children}} ======</span>
+        </div>
+        <tree-node :data="item.children" :vLeval="vLeval+i+'-'" ></tree-node>
         </li>
     </ul>
 </template>
@@ -30,6 +33,9 @@ export default {
             treeData: this.data,
             dragingIndex: null,
             dragoverIndex: null,
+            curCpmponentShow:false,
+            childs:null,
+            this_expand:false
         }
     },
     props: {
@@ -47,16 +53,17 @@ export default {
         },
         onDragOver(e,index) {
             console.log(e.target)
-            e.target.classList.add('drag-over-node')
+            if(e.target.tagName ==='SPAN'){
+                e.target.classList.add('drag-over-node')
+            }
             this.dragoverIndex = index
             if (!this.treeData[index].children) {
                 this.$set(this.treeData[index], 'children', [])
             }
-            dragover = this.treeData[index]
+            dragover = this.treeData[index];
         },
         onDragEnd(index) {
-            this.dragingIndex = null
-            this.dragingIndex = null
+            this.dragingIndex = null;
             const dragingLevel = this.vLeval + index;
             const arr = dragingLevel.match(/\d/g).slice(-2);
             if (!dragover.children) {
@@ -68,6 +75,7 @@ export default {
             // 防止拖动到自己的子元素身上
             const dragingContainOver = dragingStr.indexOf(dragoverStr) > -1;
             if (dragingContainOver) return;
+            debugger
             arr.length === 2 ? this.$parent.treeData[arr[0]].children.splice(arr[1], 1) :
             this.$parent.treeData.splice(arr[0], 1)
             dragover.children.push(draging)
@@ -75,14 +83,22 @@ export default {
         onDragEnter(e){
             console.log(e.target)
              e.target.classList.remove('drag-over-node')
+        },
+        expandNode(index){
+            console.log(this)
+            if(!this.$children) return;
+            this.this_expand = !this.this_expand;
+            const isshow = this.$children[index].curCpmponentShow
+            this.$children[index].curCpmponentShow = !isshow
         }
+        
     },
     watch: {
         data: {
             handler(newVal) {
-                this.treeData = newVal
+                this.treeData = newVal;
             },
-            
+
             deep: true,
             immediate: true
         }
