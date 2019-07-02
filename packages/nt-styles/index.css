@@ -2,3 +2,8 @@
 @import './common/font/iconfont.css';
 @import './src/button.css';
 @import './src/checkbox.css';
+@import './src/datepicker.css';
+@import './src/dialog.css';
+@import './src/select.css';
+@import './src/loadingbar.css';
+@import './src/tree.css'

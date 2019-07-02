@@ -4,14 +4,17 @@
     white-space: nowrap;
     text-align: center;
     font-weight:400;
-    border: none;
-    border-radius: 2px;
+    /* border: none; */
+    border: 1px solid;
+    border-color: val(--base_border_color); 
+    border-radius: 4px;
     outline:none;
     @e icon{
         /* color:green; */
     }
     @m default{
-        border:1px solid #ccc;
+        border: 1px solid;
+        border-color: val(--base_border_color);
         color:#000;
         cursor: pointer;
         &:hover{
@@ -22,6 +25,8 @@
     @m primary{
         background-color: var(--base_color);
         cursor: pointer;
+        border: 1px solid;
+        border-color: val(--base_border_color);
         &:hover{
             border-color:var(--base_color);
             opacity: 0.8;
@@ -30,6 +35,8 @@
     @m danger{
         background-color: #FF5722;
         cursor: pointer;
+        border: 1px solid;
+        border-color: val(--base_border_color);
         &:hover{
             border-color:var(--base_color);
             opacity: 0.8;
@@ -37,7 +44,8 @@
     }
     @m warn{
         background-color: #FFB802;
-        cursor: pointer;
+        cursor: pointer;border: 1px solid;
+        border-color: val(--base_border_color);
         &:hover{
             border-color:var(--base_color);
             opacity: 0.8;
@@ -51,13 +59,13 @@
     }
     @m large{
         height: 44px;
-        padding: 0 18px;
+        padding: 0 22px;
         line-height: 44px;
         font-size: 14px;
     }
     @m small{
         height: 26px;
-        padding: 0 4px;
+        padding: 0 8px;
         line-height: 24px;
     }
     @m long{

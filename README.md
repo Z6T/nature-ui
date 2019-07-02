@@ -1,5 +1,22 @@
 # nature-ui
 
+# 组件列表
+- Button
+- Checkbox
+- DatePicker
+- DeviceLine
+- Dialog
+- Form
+- LoadingBar 加载进度条
+- Raido
+- RadioGroup
+- Table
+- Tree
+- Transfer
+- Toast
+- Select
+- Swiper
+- Switch
 
 
 ## Project setup

@@ -3,12 +3,22 @@ import Button from './button'
 import Checkbox from './checkbox'
 import CheckboxList from './checkboxlist'
 import Datepicker from './datepicker'
+import { Dialog, dialogInstance } from './dialog/index.js';
+import Select from './select';
+import loadingbar from './loadingbar/index.js';
+import Tree from './tree';
+
 // 所有组件列表
 const components = [
     Button,
     Checkbox,
     CheckboxList,
-    Datepicker
+    Datepicker,
+    Dialog,
+    dialogInstance,
+    Select,
+    loadingbar,
+    Tree
 ]
 // 定义 install 方法，接收 Vue 作为参数
 const install = function (Vue) {
@@ -16,7 +26,10 @@ const install = function (Vue) {
     if (install.installed) return
     install.installed = true
     // 遍历注册所有组件
-    components.map(component => Vue.component(component.name, component))
+    components.map(component => {
+        if (typeof component === 'undefined' || !component.name) return;
+        Vue.component(component.name, component)
+    })
     // 下面这个写法也可以
     // components.map(component => Vue.use(component))
 }

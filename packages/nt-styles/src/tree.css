@@ -1,0 +1,11 @@
+@b nt-tree li{
+    /* background-color: #333333; */
+    list-style:none;
+}
+.drag-start-node{
+    background-color: #dcdfe6;
+}
+.drag-over-node {
+    background-color: red;
+}
+

@@ -1,0 +1,125 @@
+@b nt-date{
+    position: relative;
+    display: inline-block;
+    input{
+        position: relative;
+        box-sizing: border-box;
+        height:30px;
+        width:180px;
+        padding-left:24px;
+        border-radius: 4px;
+        border: 1px solid #606266;
+        color:#606266;
+        outline:none;
+        &:focus{
+            border-color:var(--base_color);
+        }
+    }
+    @e dateicon{
+        position: absolute;
+        left: 6px;
+        top:50%;
+        transform:translate(0,-50%);
+    }
+    @e remove{
+        position: absolute;
+        right: 6px;
+        top:50%;
+        transform:translate(0,-50%);
+        cursor: pointer;
+    }
+}
+@b nt-date-picker {
+    position: absolute;
+    z-index: 999999;
+    width:256px;
+    margin-top: 3px;
+    text-align:center;
+    box-shadow:0 2px 12px 0 rgba(0,0,0,.1);
+    background-color:#fff;
+    @e header{
+        height:38px;
+        user-select: none;
+        span{
+            cursor: pointer;
+            &:hover{
+                color:var(--base_color)
+            }
+        }
+        @e title{
+            cursor: pointer;
+            display: inline-block;
+            margin:0;
+            padding:0;
+            font-weight:bold;
+            line-height:40px;
+            text-align:center;
+            /* &:hover{
+                color:var(--base_color)
+            } */
+        }
+    }
+    @e content{
+        @e header{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr ;
+            padding:3px 0;
+            font-size:14px;
+        }
+        @e body{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+            padding-top:6px;
+            border-top:1px solid #c0c4cc;
+            @e cell{
+                    box-sizing:border-box;
+                    padding:3px 0;
+                    font-family: fantasy;
+                    font-size: 14px;
+                    font-weight: 600;
+                    border-radius:20% 80% ;
+                    cursor: pointer;
+                    &:hover{
+                        /* color:#9E026D; */
+                        color:var(--base_color);
+                    }
+                    @m active{
+                        color:#fff !important;
+                        background:var(--base_color);
+                        &:hover{
+                            color:#fff;
+                        }
+                    }
+                    @m curDay{
+                        color:#1db55e;
+                    }
+                    @m disable{
+                        color:#c0c4cc;
+                        &:hover{
+                            color:#c0c4cc;
+                            background-color:inherit;
+                        }
+                    }
+            }
+            @m year{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr ;
+                grid-template-rows: 1fr 1fr 1fr ;
+                cursor: pointer;
+                @e cell{
+                    background-clip: content-box;
+                    padding:18px 0;
+                    font-family: fantasy;
+                    font-size:14px;
+                    @m active{
+                        border-radius:30% 70%;
+                        color:white;
+                        background-color:var(--base_color);
+                    }
+                }
+            }
+        }
+    }
+}
