@@ -11,6 +11,7 @@
             draggable="true"
             :nt-tree-leval="vLeval+i"
             :isFolder="!!(item&&item.children)"
+            
         >
         <div  @click="expandNode(i)">
             <i class="iconfont" :class="!this_expand?'icon-tree-right':'icon-tree-down'" v-if="item.children&&item.children.length"></i>
