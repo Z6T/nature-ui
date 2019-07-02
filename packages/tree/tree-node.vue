@@ -53,7 +53,6 @@ export default {
             draging = this.treeData[index];
         },
         onDragOver(e,index) {
-            console.log(e.target)
             if(e.target.tagName ==='SPAN'){
                 e.target.classList.add('drag-over-node')
             }
@@ -76,17 +75,14 @@ export default {
             // 防止拖动到自己的子元素身上
             const dragingContainOver = dragingStr.indexOf(dragoverStr) > -1;
             if (dragingContainOver) return;
-            debugger
             arr.length === 2 ? this.$parent.treeData[arr[0]].children.splice(arr[1], 1) :
             this.$parent.treeData.splice(arr[0], 1)
             dragover.children.push(draging)
         },
         onDragEnter(e){
-            console.log(e.target)
              e.target.classList.remove('drag-over-node')
         },
         expandNode(index){
-            console.log(this)
             if(!this.$children) return;
             this.this_expand = !this.this_expand;
             const isshow = this.$children[index].curCpmponentShow
