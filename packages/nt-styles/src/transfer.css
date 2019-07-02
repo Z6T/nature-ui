@@ -1,0 +1,45 @@
+@b nt-transfer{
+    display: flex;
+    width: 60%;
+    height: 220px;
+    @e arrowList{
+        width: 40px;
+        height: 100%;
+        flex-direction: column;
+        @e leftArrow,rightArrow{
+            width: 28px;height: 28px;
+            margin:10px;
+            font-size: 14px;
+            background-color: var(--base_color);
+            color:#fff;
+        }
+    }
+}
+
+@b nt-transper__frame{
+    flex: 1;
+    border:2px solid ;
+    border-color:#515a6e;
+    border-radius:4px;
+    /* border-color:var(--base_color); */
+    @e header{
+        padding-left: 10px;
+        font-size:14px;
+        line-height:30px;
+        border-bottom:2px solid ;
+        border-color:#515a6e;
+        background-color: #fff;
+    }
+    @e body{
+        padding-left: 10px;
+        font-size:12px;
+        @e item{
+            line-height:20px;
+        }
+    }
+}
+.absoCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

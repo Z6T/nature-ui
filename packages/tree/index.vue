@@ -1,7 +1,8 @@
 <template >
     <div class="nt-tree">
-        <div>
-            <NodeTreeNode :data="treeData" />
+        <div class="nt-tree__div">
+            {{$refs.childNodeWrapper&&$refs.childNodeWrapper.data}}
+            <NodeTreeNode :data="treeData" ref="childNodeWrapper" />
         </div>
     </div>
 </template>

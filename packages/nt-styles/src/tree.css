@@ -1,11 +1,22 @@
-@b nt-tree li{
+@b nt-tree{
     /* background-color: #333333; */
-    list-style:none;
+    @e div  ul{
+        list-style:none;
+        font-size: 14px;
+        color: #606266;
+        & div{
+            display: inline-block;
+            cursor: pointer;
+        }
+        & div:hover{
+            background-color: #e5eaf2;
+        }
+    }
 }
 .drag-start-node{
     background-color: #dcdfe6;
 }
 .drag-over-node {
-    background-color: red;
+    background-color: #cdd3dc;
 }
 

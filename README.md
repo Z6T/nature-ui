@@ -1,22 +1,17 @@
 # nature-ui
 
 # 组件列表
-- Button
-- Checkbox
-- DatePicker
-- DeviceLine
-- Dialog
-- Form
-- LoadingBar 加载进度条
-- Raido
-- RadioGroup
+- Button ✔️
+- Checkbox️️✔️
+- CheckboxList✔️
+- DatePicker✔️
+- Dialog✔️
+- LoadingBar ✔️
 - Table
-- Tree
+- Tree✔️
 - Transfer
-- Toast
-- Select
+- Select✔️
 - Swiper
-- Switch
 
 
 ## Project setup
