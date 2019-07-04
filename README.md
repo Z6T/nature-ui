@@ -9,7 +9,7 @@
 - LoadingBar ✔️
 - Table
 - Tree✔️
-- Transfer
+- Transfer✔️
 - Select✔️
 - Swiper
 
