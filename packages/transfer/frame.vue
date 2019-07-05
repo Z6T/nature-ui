@@ -3,8 +3,8 @@
         <div class="nt-transper__frame__header">{{title}}</div>
         <div class="nt-transper__frame__body">
             <div class="nt-transper__frame__body__item" v-for="item in frameData" :key="item.key">
-                <input type="checkbox" @click="collectChecked(item.key)" />
-                {{item.label}}
+                <input type="checkbox" @click="collectChecked(item.key)" :id="item.key" />
+                <label :for="item.key">{{item.label}}</label>
             </div>
         </div>
     </div>
@@ -43,4 +43,7 @@ export default {
 </script>
 
 <style>
+label {
+    user-select: none;
+}
 </style>
