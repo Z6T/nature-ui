@@ -9,6 +9,7 @@ import loadingbar from './loadingbar/index.js';
 import Tree from './tree';
 import Tranfer from './transfer';
 import Swiper from './swiper';
+import Table from './table';
 
 // 所有组件列表
 const components = [
@@ -22,7 +23,8 @@ const components = [
     loadingbar,
     Tree,
     Tranfer,
-    Swiper
+    Swiper,
+    Table
 ]
 // 定义 install 方法，接收 Vue 作为参数
 const install = function (Vue) {

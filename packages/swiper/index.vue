@@ -19,7 +19,7 @@ export default {
             curIndex: 0,
             timer: '',
             slideList: [{
-                imgSrc: 'http://img1.imgtn.bdimg.com/it/u=2786741331,312930537&fm=214&gp=0.jpg',
+                imgSrc: 'https://gma.alicdn.com/bao/uploaded/i4/34532543/O1CN01rm95HU1UejiZiBhxI_!!0-saturn_solar.jpg_250x250.jpg_.webp',
                 clickUrl: "http://baidu.com"
             }, {
                 imgSrc: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562330773616&di=d29902c5fb8b5f33ec28a67d08b8a68d&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2F201608%2F04%2F23490553eyeyyc3yc8mur1.jpg',

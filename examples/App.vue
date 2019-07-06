@@ -1,5 +1,7 @@
 <template>
     <div id="app">
+        <nt-table />
+        <hr />
         <nt-swiper></nt-swiper>
         <hr />
         <nt-transfer></nt-transfer>
