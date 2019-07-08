@@ -1,171 +1,228 @@
 <template>
-    <div class="nt-table">
-       <div class="header">
-          <table  cellspacing="0">
-                <thead>
-                    <tr height="30">
-                        <th>左侧固定列</th>
-                    </tr>
-                </thead></table>
-          <table  cellspacing="0">
-                <thead>
-                    <tr height="30">
-                         <tr height="30">
-                        <th>nihfdsssssssssssssssao</th>
-                        <th>nihao</th>
-                        <th>nihao</th>
-                        <th>nihao</th>
-                        <th>nihao</th>
-                    </tr>
-                    </tr>
-                </thead></table>
-       </div>
-        <div class="nt-table-header"  style="height:200px;width:500px;border:1px solid red">
-                 <table  cellspacing="0">
-                <thead>
-                    <tr height="30">
-                        <th>左侧固定列</th>
+    <div class="nt-table" ref="ntTableWrapper">
+        <div class="nt-table__scroll" ref="scrolWrapper">
+            <table class="nt-table__scroll__table" ref="scrollTable">
+                <thead ref="scrolThead">
+                    <tr>
+                        <th>shdfsdfg</th>
+                        <th>clickme</th>
+                        <th>clickme</th>
+                        <th>clickme</th>
+                        <th>jkhjkhhjhjkjhkhjkhjkjkhjkhhjk</th>
+                        <th>clickme</th>
+                        <th>clickme</th>
+                        <th>clickme</th>
+                        <th>clickme</th>
+                        <th>mm</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     <tr>
-                       <td>left fixed</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>left fixed</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>left fixed</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>left fixed</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>left fixed</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
-                </tbody></table>
-            <table  cellspacing="0">
-                <thead >
-                    <tr height="30">
-                        <th>nihfdsssssssssssssssao</th>
-                        <th>nihao</th>
-                        <th>nihao</th>
-                        <th>nihao</th>
-                        <th>nihao</th>
+                    <tr>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                    </tr>
+                    <tr>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                    </tr>
+                    <tr>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                    </tr>
+                    <tr>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="nt-table__fixedleft" ref="fixedleftWrapper">
+            <table class="nt-table__fixedleft__table" ref="fixedleftTable">
+                <thead ref="fixedleftThead" style="transform:translateY(0px)">
+                    <tr>
+                        <th>shdfsdfg</th>
+                        <th>clickme</th>
                     </tr>
                 </thead>
-                <tbody>
+
+                <tbody ref="fixedleft_tbody">
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>xxx</td>
+                        <td>xxx</td>
                     </tr>
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>yy</td>
+                        <td>yyy</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="nt-table__fixedright" ref="fixedrightWrapper">
+            <table class="nt-table__fixedright__table" ref="fixedrightTable">
+                <thead ref="fixedrightThead" style="transform:translateY(0px)">
+                    <tr>
+                        <th>shdfsdfg</th>
+                        <th>clickme</th>
+                    </tr>
+                </thead>
+
+                <tbody ref="fixedright_tbody">
+                    <tr>
+                        <td>xxx</td>
+                        <td>xxx</td>
                     </tr>
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
                     </tr>
                     <tr>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
-                       <td>lalalalal</td>
+                        <td>hoverme</td>
+                        <td>hoverme</td>
+                    </tr>
+                    <tr>
+                        <td>yy</td>
+                        <td>yyy</td>
                     </tr>
                 </tbody>
             </table>
@@ -174,89 +231,41 @@
 </template>
 
 <script>
-import { log } from 'util';
-import { clearTimeout } from 'timers';
 export default {
-    name:'nt-table',
-    mounted(){
-        let timer = 0;
+    name: 'nt-table',
+    mounted() {
+        console.log('this.$refs.scrollWrapper :', this.$refs);
+        const _this = this;
+        this.$refs.scrolWrapper.addEventListener('scroll', function (e) {
+            const { scrollTop, scrollLeft } = e.target;
+            console.log(scrollTop, scrollLeft, e);
+            // _this.$refs.scrolThead.style.transform = `translateY(${scrollTop}px)`
+            // _this.$refs.fixedleftTable.style.transform = `translateY(-${scrollTop}px)`
+            // _this.$refs.fixedleftThead.style.transform = `translateY(${scrollTop}px)`
+        })
+        this.$refs.ntTableWrapper.addEventListener('scroll', function (e) {
+            const { scrollTop, scrollLeft, scrollWidth } = e.target;
+            _this.$refs.scrolThead.style.transform = `translateY(${scrollTop}px)`
+            if (scrollLeft) {
+                _this.$refs.fixedleftWrapper.classList.add('fix-shadow')
+            } else {
+                _this.$refs.fixedleftWrapper.classList.remove('fix-shadow')
+            }
+            // 因为缩进了2px
+            if (scrollLeft + 2 === _this.$refs.fixedleftWrapper.offsetWidth + _this.$refs.fixedleftWrapper.offsetWidth) {
+                _this.$refs.fixedrightWrapper.classList.remove('fix-shadow')
+            } else {
+                _this.$refs.fixedrightWrapper.classList.add('fix-shadow')
+            }
+            _this.$refs.fixedleftThead.style.transform = `translateY(${scrollTop}px)`
+            _this.$refs.fixedleftWrapper.style.left = `${scrollLeft}px`
 
-        document.querySelector('.nt-table-header').addEventListener('scroll',function (e) {
-              console.log(555);
-              console.log(  document.querySelectorAll('thead'));
-                document.querySelectorAll('thead').forEach(item=>{
-                   console.log(777);
-                   item.style.transform = `translateY(${e.target.scrollTop}px)`
-                })
-               // document.querySelectorAll('thead')
-           });
-    }
+            _this.$refs.fixedrightThead.style.transform = `translateY(${scrollTop}px)`
+            _this.$refs.fixedrightWrapper.style.right = `-${scrollLeft}px`
+        })
+    },
 }
 </script>
 
 <style>
-
-.nt-table-header{
-    overflow: auto;
-    position: relative;
-    top: 0;
-}
-.nt-table-header > table:nth-child(1){
-   position: absolute;
-   left: 0;
-}
-.nt-table-header > table:nth-child(2){
-   position: absolute;
-   left: 200px;
-}
-table thead, table tr {
-border-top-width: 1px;
-border-top-style: solid;
-border-top-color: rgb(211, 202, 221);
-}
-table {
-    width: 200px;
-border-bottom-width: 1px;
-border-bottom-style: solid;
-border-bottom-color: rgb(211, 202, 221);
-}
-
-/* Padding and font style */
-table td, table th {
-padding: 5px 10px;
-font-size: 12px;
-font-family: Verdana;
-color: rgb(95, 74, 121);
-}
-
-/* Alternating background colors */
-table tr:nth-child(even) {
-background: rgb(223, 216, 232)
-}
-table tr:nth-child(odd) {
-background: #FFF
-}
-
-/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
-::-webkit-scrollbar  
-{  
-    width: 6px;  /*滚动条宽度*/
-    height: 6px;  /*滚动条高度*/
-}  
-  
-/*定义滚动条轨道 内阴影+圆角*/  
-::-webkit-scrollbar-track  
-{  
-    -webkit-box-shadow: inset 0 0 3px ;  
-    border-radius: 10px;  /*滚动条的背景区域的圆角*/
-    background-color: red;/*滚动条的背景颜色*/  
-}  
-  
-/*定义滑块 内阴影+圆角*/  
-::-webkit-scrollbar-thumb  
-{  
-    border-radius: 10px;  /*滚动条的圆角*/
-    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3);  
-    background-color: green;  /*滚动条的背景颜色*/
-}
 </style>
