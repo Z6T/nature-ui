@@ -1,6 +1,21 @@
 <template>
     <div id="app">
-        <nt-table />
+        <nt-table>
+            <nt-table-column label="语文" prop="chinese" width="300" fixed></nt-table-column>
+            <nt-table-column label="数学" prop="shuxue" fixed></nt-table-column>
+            <nt-table-column label="英语" prop="shffuxue"></nt-table-column>
+            <nt-table-column label="物理" prop="shuxttue"></nt-table-column>
+            <nt-table-column label="化学" prop="sfdhuxue"></nt-table-column>
+            <nt-table-column label="物理" prop="shuxttue"></nt-table-column>
+            <nt-table-column label="化学" prop="sfdhuxue"></nt-table-column>
+            <nt-table-column label="物理" prop="shuxttue"></nt-table-column>
+            <nt-table-column label="物理" prop="shuxttue"></nt-table-column>
+            <nt-table-column label="化学" prop="sfdhuxue"></nt-table-column>
+            <nt-table-column label="物理" prop="shuxttue"></nt-table-column>
+            <nt-table-column label="化学" prop="sfdhuxue"></nt-table-column>
+            <nt-table-column label="地理" prop="shuxuekk" width="100" fixed="right"></nt-table-column>
+            <nt-table-column label="生物" prop="sgfghuxue" width="300" fixed="right"></nt-table-column>
+        </nt-table>
         <hr />
         <!-- <nt-swiper></nt-swiper> -->
         <hr />

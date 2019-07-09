@@ -4,7 +4,7 @@ table{
     & thead th,tbody td{
         font-size: 13px;
         height: 38px;
-        width: 80px;
+        /* width: 80px; */
         border: 1px solid #dfe6ec;
         padding: 6px 10px;
         box-sizing: border-box;
@@ -37,9 +37,6 @@ table{
         left: 0;
         top: 0;
         overflow: hidden;
-        width: 200px;
-        & table{
-        }
     }
     @e fixedright{
         /* position: relative; */
@@ -47,9 +44,6 @@ table{
         right: 0;
         top: 0;
         overflow: hidden;
-        width: 200px;
-        & table{
-        }
     }
 }
 

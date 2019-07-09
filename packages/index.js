@@ -10,6 +10,7 @@ import Tree from './tree';
 import Tranfer from './transfer';
 import Swiper from './swiper';
 import Table from './table';
+import TableColumn from './table/tablecolumn';
 
 // 所有组件列表
 const components = [
@@ -24,7 +25,8 @@ const components = [
     Tree,
     Tranfer,
     Swiper,
-    Table
+    Table,
+    TableColumn
 ]
 // 定义 install 方法，接收 Vue 作为参数
 const install = function (Vue) {
