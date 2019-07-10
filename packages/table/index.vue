@@ -261,14 +261,17 @@ export default {
             this.fixedRightTitleData.title = this.titleAllData.filter(item => item.fixed === 'right');
             this.scrollTitleData.title = this.titleAllData.filter(item => typeof item.fixed === 'undefined');
         },
-        bindScrollEvent() {
-            // 更改scroll的padding
+        setScrollTablePading() {
             if (this.fixedLeftTitleData.title.length !== 0 || this.fixedLeftTitleData.title.length !== 0) {
                 setTimeout(() => {
                     const [pdLeft, pdRight] = [this.$refs.fixedleftWrapper.offsetWidth, this.$refs.fixedrightWrapper.offsetWidth]
-                    this.$refs.scrolWrapper.style.padding = `0 ${pdRight - 1}px  0  ${pdLeft - 1}px `;
+                    this.$refs.scrolWrapper.style.margin = `0 ${pdRight - 1}px  0  ${pdLeft - 1}px `;
                 }, 0);
             }
+        },
+        bindScrollEvent() {
+            // 更改scroll的padding
+
             this.$refs.ntTableWrapper.addEventListener('scroll', (e) => {
                 const { scrollTop, scrollLeft } = e.target;
                 // 固定头
@@ -280,8 +283,12 @@ export default {
                     this.$refs.fixedleftWrapper.classList.remove('fix-shadow')
                 }
                 // 因为缩进了2px
-                console.log(this.$refs.fixedleftWrapper.offsetWidth + this.$refs.fixedleftWrapper.offsetWidth, scrollLeft);
-
+                const awarp = this.$refs.scrolWrapper;
+                console.log(this.$refs.fixedleftWrapper.offsetWidth, this.$refs.fixedleftWrapper.offsetWidth, scrollLeft);
+                console.log('this.$refs.scrolWrapper.offsetLeft :', this.$refs.scrolWrapper.offsetLeft);
+                console.log('awarp.clientWidth :', awarp.clientWidth);
+                console.log('awarp.offsetWidth :', awarp.offsetWidth);
+                console.log('awarp.scrollLeft :', scrollLeft);
                 if (scrollLeft + 2 === this.$refs.fixedleftWrapper.offsetWidth + this.$refs.fixedleftWrapper.offsetWidth) {
                     this.$refs.fixedrightWrapper.classList.remove('fix-shadow')
                 } else {
@@ -298,6 +305,7 @@ export default {
     mounted() {
         this.handleSlotData()
         this.bindScrollEvent();
+        this.setScrollTablePading()
     },
 }
 </script>
