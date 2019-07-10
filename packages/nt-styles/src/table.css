@@ -1,17 +1,15 @@
 table{
-    width: 100%;
     border-collapse: collapse;
     & thead th,tbody td{
         font-size: 13px;
         height: 38px;
-        /* width: 80px; */
         border: 1px solid #dfe6ec;
         padding: 6px 10px;
         box-sizing: border-box;
         text-align: center;
         background-clip: padding-box;
-        /* background: #f3f3f3; */
         background-color: #f5f5f7;
+        white-space: nowrap !important
     }
     & tbody td{
         background-color: #fff;
@@ -24,22 +22,15 @@ table{
     width: 1000px;
     @e scroll{
         height: 300px;
-        /* overflow: auto; */
-        width: 100%;
-        /* margin-left: 199px;
-        margin-right: 200px; */
-        /* padding:0 379px; */
         min-height: 300px;
     }
     @e fixedleft{
-        /* position: relative; */
         position: absolute;
         left: 0;
         top: 0;
         overflow: hidden;
     }
     @e fixedright{
-        /* position: relative; */
         position: absolute;
         right: 0;
         top: 0;

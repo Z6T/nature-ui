@@ -1,20 +1,23 @@
 <template>
     <div id="app">
-        <nt-table>
+        <nt-table :data="tableData">
             <nt-table-column label="语文" prop="chinese" width="300" fixed></nt-table-column>
             <nt-table-column label="数学" prop="shuxue" fixed></nt-table-column>
-            <nt-table-column label="英语" prop="shffuxue"></nt-table-column>
-            <nt-table-column label="物理" prop="shuxttue"></nt-table-column>
-            <nt-table-column label="化学" prop="sfdhuxue"></nt-table-column>
-            <nt-table-column label="物理" prop="shuxttue"></nt-table-column>
-            <nt-table-column label="化学" prop="sfdhuxue"></nt-table-column>
-            <nt-table-column label="物理" prop="shuxttue"></nt-table-column>
-            <nt-table-column label="物理" prop="shuxttue"></nt-table-column>
-            <nt-table-column label="化学" prop="sfdhuxue"></nt-table-column>
-            <nt-table-column label="物理" prop="shuxttue"></nt-table-column>
-            <nt-table-column label="化学" prop="sfdhuxue"></nt-table-column>
-            <nt-table-column label="地理" prop="shuxuekk" width="100" fixed="right"></nt-table-column>
-            <nt-table-column label="生物" prop="sgfghuxue" width="300" fixed="right"></nt-table-column>
+            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
+            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
+            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
+            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
+            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
+            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
+            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
+            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
+            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
+            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
+            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
+            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
+            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
+            <nt-table-column label="物理" prop="wuli" fixed="right"></nt-table-column>
+            <nt-table-column label="化学" prop="huaxue" fixed="right"></nt-table-column>
         </nt-table>
         <hr />
         <!-- <nt-swiper></nt-swiper> -->
@@ -80,7 +83,20 @@ export default {
                 text: '🍌',
                 value: '3'
             }],
-            sVal: '3'
+            sVal: '3',
+            tableData: [{
+                chinese: 111,
+                english: 222,
+                shuxue: 333,
+                wuli: 444,
+                huaxue: 555
+            }, {
+                chinese: 111,
+                english: 222222222222222222222222222222222222222222222222222222,
+                shuxue: 333,
+                wuli: 444,
+                huaxue: 555
+            }]
         }
     },
     methods: {
