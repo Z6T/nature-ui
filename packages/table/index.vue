@@ -3,7 +3,7 @@
         <!-- scroll -->
         <div class="nt-table__scroll" ref="scrolWrapper">
             <table class="nt-table__scroll__table" ref="scrollTable">
-                <thead ref="scrolThead">
+                <thead ref="scrolThead" :style="topStyl">
                     <tr>
                         <th
                             :width="item.width"
@@ -12,9 +12,9 @@
                         >
                             <div v-text="item.label"></div>
                         </th>
+                        <!-- <slot></slot> -->
                     </tr>
                 </thead>
-
                 <tbody>
                     <tr v-for="(row,i) in data" :key="i+'v-row'">
                         <td
@@ -27,13 +27,18 @@
             </table>
         </div>
         <!-- left -->
-        <div class="nt-table__fixedleft" ref="fixedleftWrapper">
+        <div
+            class="nt-table__fixedleft"
+            ref="fixedleftWrapper"
+            :style="leftStyl"
+            :class="{'fix-shadow':leftFixTabelData.showShadow}"
+        >
             <table class="nt-table__fixedleft__table" ref="fixedleftTable">
-                <thead ref="fixedleftThead" style="transform:translateY(0px)">
+                <thead ref="fixedleftThead" :style="topStyl">
                     <tr>
                         <th
                             :width="item.width"
-                            v-for="(item,index) in fixedLeftTitleData.title"
+                            v-for="(item,index) in leftFixTabelData.title"
                             :key="index+'_'+item.prop"
                             v-text="item.label"
                         ></th>
@@ -43,7 +48,7 @@
                 <tbody ref="fixedleft_tbody">
                     <tr v-for="(row,i) in data" :key="i+'v-row'">
                         <td
-                            v-for="(title,j) in fixedLeftTitleData.title"
+                            v-for="(title,j) in leftFixTabelData.title"
                             :key="j+'_td'"
                             v-text="row[title.prop]"
                         ></td>
@@ -52,23 +57,28 @@
             </table>
         </div>
         <!-- right -->
-        <div class="nt-table__fixedright" ref="fixedrightWrapper">
+        <div
+            ref="fixedrightWrapper"
+            class="nt-table__fixedright"
+            :class="{'fix-shadow':rightFixTabelData.showShadow}"
+            :style="leftStyl"
+        >
             <table class="nt-table__fixedright__table" ref="fixedrightTable">
-                <thead ref="fixedrightThead" style="transform:translateY(0px)">
+                <thead ref="fixedrightThead" :style="topStyl">
                     <tr>
-                        <th
+                        <nt-table-column
                             :width="item.width"
-                            v-for="(item,index) in fixedRightTitleData.title"
+                            v-for="(item,index) in rightFixTabelData.title"
                             :key="index+'_'+item.prop"
                             v-text="item.label"
-                        ></th>
+                        ></nt-table-column>
                     </tr>
                 </thead>
 
                 <tbody ref="fixedright_tbody">
                     <tr v-for="(row,i) in data" :key="i+'v-row'">
                         <td
-                            v-for="(title,j) in fixedRightTitleData.title"
+                            v-for="(title,j) in rightFixTabelData.title"
                             :key="j+'_td'"
                             v-text="row[title.prop]"
                         ></td>
@@ -80,77 +90,94 @@
 </template>
 
 <script>
+import NtTableColumn from './tablecolumn';
+
 export default {
     name: 'nt-table',
+    components: { NtTableColumn },
     data() {
         return {
             titleAllData: [],
-            fixedLeftTitleData: {
+            leftFixTabelData: {
                 title: [],
-                data: []
+                data: [],
+                showShadow: false
             },
-            fixedRightTitleData: {
+            rightFixTabelData: {
                 title: [],
-                data: []
+                data: [],
+                showShadow: true
             },
             scrollTitleData: {
                 title: [],
                 data: []
             },
+            scrollTop: 0,
+            scrollLeft: 0
         }
     },
     props: {
         data: {
             type: Array,
             default: () => []
+        },
+        columns: {
+            type: Array,
+            default: () => []
         }
+    },
+    computed: {
+        leftStyl() {
+            return { transform: `translateX(${this.scrollLeft}px)` }
+        },
+        topStyl() {
+            return { transform: `translateY(${this.scrollTop}px)` }
+        },
     },
     methods: {
         handleSlotData() {
-            const slotDefault = this.$slots.default;
-            slotDefault.forEach(item => this.titleAllData.push(item.data.attrs))
-            this.fixedLeftTitleData.title = this.titleAllData.filter(item => typeof item.fixed !== 'undefined' && (item.fixed === '' || item.fixed === 'left'))
-            this.fixedRightTitleData.title = this.titleAllData.filter(item => item.fixed === 'right');
-            this.scrollTitleData.title = this.titleAllData.filter(item => typeof item.fixed === 'undefined');
+            // const slotDefault = this.$slots.default;
+            // console.log(slotDefault);
+            this.columns.forEach(item => this.titleAllData.push(item))
+            // 此处如果用filter,增加复杂度,要三次filter
+            this.titleAllData.forEach(item => {
+                if (item.fixed === '' || item.fixed === 'left') {
+                    this.leftFixTabelData.title.push(item)
+                } else if (item.fixed === 'right') {
+                    this.rightFixTabelData.title.push(item)
+                } else {
+                    this.scrollTitleData.title.push(item)
+                }
+            });
         },
         setScrollTablePading() {
-            if (this.fixedLeftTitleData.title.length !== 0 || this.fixedLeftTitleData.title.length !== 0) {
+            if (this.leftFixTabelData.title.length !== 0 || this.leftFixTabelData.title.length !== 0) {
                 setTimeout(() => {
-                    const [pdLeft, pdRight, scrollWidth] = [this.$refs.fixedleftWrapper.offsetWidth, this.$refs.fixedrightWrapper.offsetWidth, this.$refs.scrollTable.offsetWidth]
-                    this.$refs.scrolWrapper.style.padding = `0 ${pdRight - 1}px  0  ${pdLeft - 1}px `;
-                    this.$refs.scrolWrapper.style.width = `${scrollWidth + pdRight + pdLeft}px`;
+                    const [pdLeft, pdRight, scrollWidth] = [this.$refs.fixedleftWrapper.offsetWidth, this.$refs.fixedrightWrapper.offsetWidth, this.$refs.scrollTable.offsetWidth];
+                    let lTableWidth = this.leftFixTabelData.title.length ? pdLeft : 0;
+                    let rTableWidth = this.rightFixTabelData.title.length ? pdRight : 0;
+                    this.$refs.scrolWrapper.style.paddingLeft = (lTableWidth ? (lTableWidth - 1) : 0) + 'px'
+                    this.$refs.scrolWrapper.style.paddingRight = (rTableWidth ? (rTableWidth - 1) : 0) + 'px'
+                    // this.$refs.scrolWrapper.style.padding = `0 ${rTableWidth - 1}px  0  ${lTableWidth - 1}px `;
+                    this.$refs.scrolWrapper.style.width = `${scrollWidth + lTableWidth}px`;
                 }, 0);
             }
         },
         bindScrollEvent() {
-            // 更改scroll的padding
-
             this.$refs.ntTableWrapper.addEventListener('scroll', (e) => {
                 const { scrollTop, scrollLeft } = e.target;
-                // 固定头
-                this.$refs.scrolThead.style.transform = `translateY(${scrollTop}px)`
                 // 左右滑动控制fixtable的阴影的显示隐藏
-                if (scrollLeft) {
-                    this.$refs.fixedleftWrapper.classList.add('fix-shadow')
-                } else {
-                    this.$refs.fixedleftWrapper.classList.remove('fix-shadow')
-                }
-                // 因为缩进了2px
-                if (scrollLeft + this.$refs.ntTableWrapper.offsetWidth === this.$refs.scrolWrapper.offsetWidth) {
-                    this.$refs.fixedrightWrapper.classList.remove('fix-shadow')
-                } else {
-                    this.$refs.fixedrightWrapper.classList.add('fix-shadow')
-                }
-                this.$refs.fixedleftThead.style.transform = `translateY(${scrollTop}px)`
-                this.$refs.fixedleftWrapper.style.transform = `translateX(${scrollLeft}px)`
+                this.leftFixTabelData.showShadow = !!scrollLeft;
+                console.log(scrollLeft, this.$refs.ntTableWrapper.offsetWidth, this.$refs.scrolWrapper.offsetWidth);
 
-                this.$refs.fixedrightThead.style.transform = `translateY(${scrollTop}px)`
-                this.$refs.fixedrightWrapper.style.transform = `translateX(${scrollLeft}px)`
+                this.rightFixTabelData.showShadow = !(scrollLeft + this.$refs.ntTableWrapper.offsetWidth === this.$refs.scrolWrapper.offsetWidth);
+                this.scrollTop = scrollTop
+                this.scrollLeft = scrollLeft
             })
         }
     },
     mounted() {
-        this.handleSlotData()
+        this.handleSlotData();
         this.bindScrollEvent();
         this.setScrollTablePading()
     },

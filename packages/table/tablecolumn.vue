@@ -1,6 +1,6 @@
 
 <template>
-    <th class="nt-table-column" v-text="label"></th>
+    <th class="nt-table-column" :width="width">{{label}}</th>
 </template>
 
 <script>
@@ -9,15 +9,14 @@ export default {
     props: {
         width: String,
         fixed: {
-            type: [String, Boolean],
-            default: false,
-            validator: function (f) {
-                return ['right', 'left', true].indexOf(f) > -1;
-            }
+            type: [String, Boolean]
         },
         label: String,
         prop: String
-    }
+    },
+    created() {
+        console.log(this.$children)
+    },
 }
 </script>
 

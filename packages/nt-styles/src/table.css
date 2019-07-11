@@ -19,10 +19,8 @@ table{
 @b nt-table{
     position: relative;
     overflow: auto;
-    width: 1000px;
     @e scroll{
-        height: 300px;
-        min-height: 300px;
+        min-height: 200px;
     }
     @e fixedleft{
         position: absolute;

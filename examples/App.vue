@@ -1,7 +1,12 @@
 <template>
     <div id="app">
-        <nt-table :data="tableData">
-            <nt-table-column label="语文" prop="chinese" width="300" fixed></nt-table-column>
+        <nt-table :data="tableData" :columns="title">
+            <!-- <nt-table-column
+                label="fdsfdsfsdfsdfsdfsdfdsfdsfsdfsdfsdfsdfdsfdsfsdfsdfsdfsd"
+                prop="chinese"
+                width="300"
+                fixed
+            ></nt-table-column>
             <nt-table-column label="数学" prop="shuxue" fixed></nt-table-column>
             <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
             <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
@@ -17,7 +22,14 @@
             <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
             <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
             <nt-table-column label="物理" prop="wuli" fixed="right"></nt-table-column>
-            <nt-table-column label="化学" prop="huaxue" fixed="right"></nt-table-column>
+            <nt-table-column label="化学" prop="huaxue" fixed="right">gdfgdf</nt-table-column>
+            <el-table-column fixed="right" width="100">
+                <template>
+                    <nt-button type="text" size="small">查看</nt-button>
+                    <nt-button type="text" size="small">编辑</nt-button>
+                    <button>你哈</button>
+                </template>
+            </el-table-column>-->
         </nt-table>
         <hr />
         <!-- <nt-swiper></nt-swiper> -->
@@ -84,15 +96,118 @@ export default {
                 value: '3'
             }],
             sVal: '3',
+            title: [
+                {
+                    label: '机构编号',
+                    prop: 'number',
+                    width: 85,
+                    fixed: 'left'
+                },
+                {
+                    label: '机构名称',
+                    prop: 'name',
+                    width: 292,
+                    fixed: 'left',
+                    textAlign: 'left'
+                },
+                {
+                    label: '类型',
+                    prop: 'type',
+                    width: 180
+                },
+                {
+                    label: '类型',
+                    prop: 'type',
+                    width: 180
+                },
+                {
+                    label: '类型',
+                    prop: 'type',
+                    width: 180
+                },
+                {
+                    label: '类型',
+                    prop: 'type',
+                    width: 180
+                },
+                {
+                    label: '类型',
+                    prop: 'type',
+                    width: 180
+                },
+                {
+                    label: '类型',
+                    prop: 'type',
+                    width: 180
+                },
+                {
+                    label: '类型',
+                    prop: 'type',
+                    width: 180
+                },
+                {
+                    label: '状态',
+                    prop: 'brand',
+                    width: 82
+                }
+            ],
             tableData: [{
                 chinese: 111,
-                english: 222,
+                // english: 222,
                 shuxue: 333,
                 wuli: 444,
                 huaxue: 555
             }, {
                 chinese: 111,
-                english: 222222222222222222222222222222222222222222222222222222,
+                english: "english",
+                shuxue: 333,
+                wuli: 444,
+                huaxue: 555
+            }, {
+                chinese: 111,
+                english: "english",
+                shuxue: 333,
+                wuli: 444,
+                huaxue: 555
+            }, {
+                chinese: 111,
+                english: "english",
+                shuxue: 333,
+                wuli: 444,
+                huaxue: 555
+            }, {
+                chinese: 111,
+                english: "english",
+                shuxue: 333,
+                wuli: 444,
+                huaxue: 555
+            }, {
+                chinese: 111,
+                english: "english",
+                shuxue: 333,
+                wuli: 444,
+                huaxue: 555
+            }, {
+                chinese: 111,
+                english: "english",
+                shuxue: 333,
+                wuli: 444,
+                huaxue: 555
+            }, {
+                chinese: 111,
+                english: "english",
+                shuxue: 333,
+                wuli: 444,
+                huaxue: 555
+            }, {
+                chinese: 111,
+                english: "english",
+                shuxue: 333,
+                wuli: 444,
+                huaxue: 555
+            }, {
+                chinese: 111,
+                english: "english",
                 shuxue: 333,
                 wuli: 444,
                 huaxue: 555
