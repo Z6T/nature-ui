@@ -1,10 +1,11 @@
 table{
+    width: 100%;
     border-collapse: collapse;
     & thead th,tbody td{
         font-size: 13px;
-        height: 38px;
+        /* height: 38px; */
         border: 1px solid #dfe6ec;
-        padding: 6px 10px;
+        padding: 8px 10px;
         box-sizing: border-box;
         text-align: center;
         background-clip: padding-box;
@@ -14,6 +15,13 @@ table{
     & tbody td{
         background-color: #fff;
     }
+}
+
+.handleTd > *{
+    margin: 0 6px;
+    font-weight: bold;
+    color:var(--base_color);
+    cursor: pointer;
 }
 
 @b nt-table{

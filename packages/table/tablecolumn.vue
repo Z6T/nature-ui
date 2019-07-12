@@ -7,7 +7,7 @@
 export default {
     name: 'nt-table-colummn',
     props: {
-        width: String,
+        width: [String, Number],
         fixed: {
             type: [String, Boolean]
         },
@@ -15,7 +15,7 @@ export default {
         prop: String
     },
     created() {
-        console.log(this.$children)
+        // console.log(this.$children)
     },
 }
 </script>

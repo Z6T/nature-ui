@@ -1,35 +1,11 @@
 <template>
     <div id="app">
         <nt-table :data="tableData" :columns="title">
-            <!-- <nt-table-column
-                label="fdsfdsfsdfsdfsdfsdfdsfdsfsdfsdfsdfsdfdsfdsfsdfsdfsdfsd"
-                prop="chinese"
-                width="300"
-                fixed
-            ></nt-table-column>
-            <nt-table-column label="数学" prop="shuxue" fixed></nt-table-column>
-            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
-            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
-            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
-            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
-            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
-            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
-            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
-            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
-            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
-            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
-            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
-            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
-            <nt-table-column label="英语" prop="english" width="300"></nt-table-column>
-            <nt-table-column label="物理" prop="wuli" fixed="right"></nt-table-column>
-            <nt-table-column label="化学" prop="huaxue" fixed="right">gdfgdf</nt-table-column>
-            <el-table-column fixed="right" width="100">
-                <template>
-                    <nt-button type="text" size="small">查看</nt-button>
-                    <nt-button type="text" size="small">编辑</nt-button>
-                    <button>你哈</button>
-                </template>
-            </el-table-column>-->
+            <template v-slot:default="scope" fixed="right">
+                <span @click="handleCick(scope.row)">编辑</span>
+                <span>删除</span>
+                <span>编辑</span>
+            </template>
         </nt-table>
         <hr />
         <!-- <nt-swiper></nt-swiper> -->
@@ -107,7 +83,7 @@ export default {
                     label: '机构名称',
                     prop: 'name',
                     width: 292,
-                    fixed: 'left',
+                    // fixed: 'left',
                     textAlign: 'left'
                 },
                 {
@@ -143,78 +119,59 @@ export default {
                 {
                     label: '类型',
                     prop: 'type',
-                    width: 180
+                    width: 180,
+                    // fixed: 'right'
                 },
                 {
                     label: '状态',
                     prop: 'brand',
-                    width: 82
+                    width: 82,
+                    // fixed: 'right'
                 }
             ],
             tableData: [{
-                chinese: 111,
+                number: 111,
                 // english: 222,
-                shuxue: 333,
-                wuli: 444,
-                huaxue: 555
+                name: '英皇读书',
+                type: '金融',
+                brand: '在线运行'
             }, {
-                chinese: 111,
-                english: "english",
-                shuxue: 333,
-                wuli: 444,
-                huaxue: 555
+                number: 333,
+                // english: 222,
+                name: '英皇读书',
+                type: '金融',
+                brand: '在线运行'
             }, {
-                chinese: 111,
-                english: "english",
-                shuxue: 333,
-                wuli: 444,
-                huaxue: 555
+                number: 111,
+                // english: 222,
+                name: '英皇读书',
+                type: '金融',
+                brand: '在线运行'
             }, {
-                chinese: 111,
-                english: "english",
-                shuxue: 333,
-                wuli: 444,
-                huaxue: 555
+                number: 111,
+                // english: 222,
+                name: '英皇读书',
+                type: '金融',
+                brand: '在线运行'
             }, {
-                chinese: 111,
-                english: "english",
-                shuxue: 333,
-                wuli: 444,
-                huaxue: 555
+                number: 111,
+                // english: 222,
+                name: '英皇读书',
+                type: '金融',
+                brand: '在线运行'
             }, {
-                chinese: 111,
-                english: "english",
-                shuxue: 333,
-                wuli: 444,
-                huaxue: 555
-            }, {
-                chinese: 111,
-                english: "english",
-                shuxue: 333,
-                wuli: 444,
-                huaxue: 555
-            }, {
-                chinese: 111,
-                english: "english",
-                shuxue: 333,
-                wuli: 444,
-                huaxue: 555
-            }, {
-                chinese: 111,
-                english: "english",
-                shuxue: 333,
-                wuli: 444,
-                huaxue: 555
-            }, {
-                chinese: 111,
-                english: "english",
-                shuxue: 333,
-                wuli: 444,
-                huaxue: 555
-            }]
+                number: 111,
+                // english: 222,
+                name: '英皇读书',
+                type: '金融',
+                brand: '在线运行'
+            },]
         }
     },
     methods: {
+        handleCick(data) {
+            console.log(data);
+        },
         query(e) {
             // eslint-disable-next-line no-console
             console.log(e);

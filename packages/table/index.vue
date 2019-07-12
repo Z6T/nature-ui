@@ -6,13 +6,13 @@
                 <thead ref="scrolThead" :style="topStyl">
                     <tr>
                         <th
+                            :height="tHeadHeight"
                             :width="item.width"
                             v-for="(item,index) in scrollTitleData.title"
                             :key="index+'_'+item.prop"
                         >
                             <div v-text="item.label"></div>
                         </th>
-                        <!-- <slot></slot> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -37,6 +37,7 @@
                 <thead ref="fixedleftThead" :style="topStyl">
                     <tr>
                         <th
+                            :height="tHeadHeight"
                             :width="item.width"
                             v-for="(item,index) in leftFixTabelData.title"
                             :key="index+'_'+item.prop"
@@ -66,12 +67,16 @@
             <table class="nt-table__fixedright__table" ref="fixedrightTable">
                 <thead ref="fixedrightThead" :style="topStyl">
                     <tr>
-                        <nt-table-column
+                        <th
+                            :height="tHeadHeight"
                             :width="item.width"
                             v-for="(item,index) in rightFixTabelData.title"
                             :key="index+'_'+item.prop"
                             v-text="item.label"
-                        ></nt-table-column>
+                        ></th>
+                        <th v-if="$scopedSlots.default">
+                            <div>操作</div>
+                        </th>
                     </tr>
                 </thead>
 
@@ -82,6 +87,9 @@
                             :key="j+'_td'"
                             v-text="row[title.prop]"
                         ></td>
+                        <td v-if="$scopedSlots.default" class="handleTd">
+                            <slot v-bind:row="row"></slot>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -90,11 +98,9 @@
 </template>
 
 <script>
-import NtTableColumn from './tablecolumn';
 
 export default {
     name: 'nt-table',
-    components: { NtTableColumn },
     data() {
         return {
             titleAllData: [],
@@ -113,7 +119,9 @@ export default {
                 data: []
             },
             scrollTop: 0,
-            scrollLeft: 0
+            scrollLeft: 0,
+            tHeadHeight: 0,
+            row: 988989
         }
     },
     props: {
@@ -136,8 +144,6 @@ export default {
     },
     methods: {
         handleSlotData() {
-            // const slotDefault = this.$slots.default;
-            // console.log(slotDefault);
             this.columns.forEach(item => this.titleAllData.push(item))
             // 此处如果用filter,增加复杂度,要三次filter
             this.titleAllData.forEach(item => {
@@ -151,15 +157,14 @@ export default {
             });
         },
         setScrollTablePading() {
-            if (this.leftFixTabelData.title.length !== 0 || this.leftFixTabelData.title.length !== 0) {
+            if (this.leftFixTabelData.title.length !== 0) {
                 setTimeout(() => {
                     const [pdLeft, pdRight, scrollWidth] = [this.$refs.fixedleftWrapper.offsetWidth, this.$refs.fixedrightWrapper.offsetWidth, this.$refs.scrollTable.offsetWidth];
                     let lTableWidth = this.leftFixTabelData.title.length ? pdLeft : 0;
-                    let rTableWidth = this.rightFixTabelData.title.length ? pdRight : 0;
+                    let rTableWidth = typeof pdRight !== 'undefined' ? pdRight : 0;
+                    this.$refs.scrolWrapper.style.width = `${scrollWidth + lTableWidth}px`;
                     this.$refs.scrolWrapper.style.paddingLeft = (lTableWidth ? (lTableWidth - 1) : 0) + 'px'
                     this.$refs.scrolWrapper.style.paddingRight = (rTableWidth ? (rTableWidth - 1) : 0) + 'px'
-                    // this.$refs.scrolWrapper.style.padding = `0 ${rTableWidth - 1}px  0  ${lTableWidth - 1}px `;
-                    this.$refs.scrolWrapper.style.width = `${scrollWidth + lTableWidth}px`;
                 }, 0);
             }
         },
@@ -168,8 +173,6 @@ export default {
                 const { scrollTop, scrollLeft } = e.target;
                 // 左右滑动控制fixtable的阴影的显示隐藏
                 this.leftFixTabelData.showShadow = !!scrollLeft;
-                console.log(scrollLeft, this.$refs.ntTableWrapper.offsetWidth, this.$refs.scrolWrapper.offsetWidth);
-
                 this.rightFixTabelData.showShadow = !(scrollLeft + this.$refs.ntTableWrapper.offsetWidth === this.$refs.scrolWrapper.offsetWidth);
                 this.scrollTop = scrollTop
                 this.scrollLeft = scrollLeft
@@ -180,6 +183,11 @@ export default {
         this.handleSlotData();
         this.bindScrollEvent();
         this.setScrollTablePading()
+        setTimeout(() => {
+            this.tHeadHeight = Math.max(this.$refs.scrolThead.offsetHeight,
+                this.$refs.fixedleftThead.offsetHeight,
+                this.$refs.fixedrightThead.offsetHeight)
+        }, 0);
     },
 }
 </script>
