@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <nt-table :data="tableData" :columns="title">
+        <nt-table :data="tableData" :columns="title" style="height:200px">
             <template v-slot:default="scope" fixed="right">
                 <span @click="handleCick(scope.row)">编辑</span>
                 <span>删除</span>
@@ -10,7 +10,7 @@
         <hr />
         <!-- <nt-swiper></nt-swiper> -->
         <hr />
-        <nt-transfer></nt-transfer>
+        <nt-transfer :data="datatransfer" :targetKeys="targetKeys"></nt-transfer>
 
         <nt-tree></nt-tree>
         <hr />
@@ -55,6 +55,12 @@ export default {
     name: "app",
     data() {
         return {
+            datatransfer: [
+                { "key": "1", "label": "Content 1", "disabled": false },
+                { "key": "2", "label": "Content 2", "disabled": true },
+                { "key": "3", "label": "Content 3", "disabled": false }
+            ],
+            targetKeys: ["1", "2"],
             value1: '',
             value2: '',
             checked1: false,

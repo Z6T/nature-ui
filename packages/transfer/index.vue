@@ -24,18 +24,13 @@ export default {
     name: 'nt-transfer',
     data() {
         return {
-            data: [
-                { "key": "1", "label": "Content 1", "disabled": false },
-                { "key": "2", "label": "Content 2", "disabled": true },
-                { "key": "3", "label": "Content 3", "disabled": false }
-            ],
-            targetKeys: ["1", "2"],
             toleftDisable: false,
             toRightDisable: false,
         }
     },
     props: {
-
+        data: Array,
+        targetKeys: Array
     },
     computed: {
         srcList() {

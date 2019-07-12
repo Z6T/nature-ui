@@ -24,6 +24,10 @@ table{
     cursor: pointer;
 }
 
+tr:hover{
+    background-color: var(--base_color);
+}
+
 @b nt-table{
     position: relative;
     overflow: auto;
