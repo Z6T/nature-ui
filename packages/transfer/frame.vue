@@ -2,8 +2,8 @@
     <div class="nt-transper__frame">
         <div class="nt-transper__frame__header">{{title}}</div>
         <div class="nt-transper__frame__body">
-            <div class="nt-transper__frame__body__item" v-for="item in frameData" :key="item.key">
-                <input type="checkbox" @click="collectChecked(item.key)" :id="item.key" />
+            <div class="nt-transper__frame__body__item" v-for="item in frameData" :key="item.key" :class="item.disabled?'disabled':''">
+                <input type="checkbox" @click="collectChecked(item.key)" :id="item.key" :disabled="item.disabled"/>
                 <label :for="item.key">{{item.label}}</label>
             </div>
         </div>

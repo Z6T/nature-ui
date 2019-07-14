@@ -52,3 +52,12 @@
     border:1px solid  #dcdee2;
     cursor: not-allowed;
 }
+
+input[type='checkbox']{
+    outline: none;
+    vertical-align: sub;
+}
+
+.disabled{
+    opacity: 0.7;
+}

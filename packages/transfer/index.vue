@@ -53,12 +53,14 @@ export default {
             }
             this.$refs.dist.collections.length = 0;
             this.toleftDisable = false;
+            this.$emit('onChange',[this.srcList,this.distList])
         },
         toRight() {
             const srcCols = this.$refs.src.collections;
             this.targetKeys.push(...srcCols);
             this.$refs.src.collections = []
             this.toRightDisable = false;
+             this.$emit('onChange',[this.srcList,this.distList])
         }
     },
 }

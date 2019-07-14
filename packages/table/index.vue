@@ -139,7 +139,8 @@ export default {
             return { transform: `translateX(${this.scrollLeft}px)` }
         },
         topStyl() {
-            return { transform: `translateY(${this.scrollTop}px)` }
+            // 减一是为了解决transform渲染的问题
+            return { transform: `translateY(${this.scrollTop-1}px)` }
         },
     },
     methods: {

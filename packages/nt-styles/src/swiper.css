@@ -1,4 +1,5 @@
 @b nt-swiper{
+  position: relative;
     width: 500px;
     height: 300px;
     border:1px solid red;
@@ -26,6 +27,22 @@
             text-align:center;
             line-height:300px;
         }
+    }
+    @e dots{
+      position: absolute;
+      bottom:0;
+      left:50%;
+      height: 6px;
+      transform:translate(-50%);
+      
+      & span{
+        background-color: red;
+        display:inline-block;
+        margin:0 6px;
+        width:40px;
+        height: 6px;
+        z-index:9999;
+      }
     }
 }
 

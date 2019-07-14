@@ -10,7 +10,9 @@
         <hr />
         <!-- <nt-swiper></nt-swiper> -->
         <hr />
-        <nt-transfer :data="datatransfer" :targetKeys="targetKeys"></nt-transfer>
+        <nt-transfer :data="datatransfer" :targetKeys="targetKeys"
+        @onChange="handleCHangeTranfsd"
+        ></nt-transfer>
 
         <nt-tree></nt-tree>
         <hr />
@@ -175,6 +177,9 @@ export default {
         }
     },
     methods: {
+        handleCHangeTranfsd(newT){
+            console.log(newT);
+        },
         handleCick(data) {
             console.log(data);
         },

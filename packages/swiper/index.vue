@@ -1,17 +1,25 @@
 <template>
     <div class="nt-swiper">
         <transition-group tag="ul" name="list" class="nt-swiper__wrapper">
-            <li v-for="(item,i) in slideList" :key="i" v-show="i===curIndex">
+            <li v-for="(item,i) in slideList" :key="i" v-show="i===curIndex" @mouseenter="stopPlay"
+             @mouseleave="go"
+            >
                 <a :href="item.clickUrl">
                     <img :src="item.imgSrc" alt />
                 </a>
             </li>
         </transition-group>
-        <div class="nt-swiper__dots"></div>
+        <div class="nt-swiper__dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
     </div>
 </template>
 
 <script>
+import { clearInterval } from 'timers';
 export default {
     name: 'nt-swiper',
     data() {
@@ -27,21 +35,32 @@ export default {
             }, {
                 imgSrc: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562330773989&di=e81bac9a75c76ba10a50c7ae907b89c6&imgtype=0&src=http%3A%2F%2Fcdnq.duitang.com%2Fuploads%2Fitem%2F201307%2F12%2F20130712143815_zXBrZ.jpeg',
                 clickUrl: "http://baidu.com"
-            }]
+            }],
+            timer:''
         }
     },
     methods: {
+         go() {
+                this.timer = setInterval(() => {
+                    this.autoPlay()
+                }, 1000)
+            },
         autoPlay() {
             this.curIndex++;
             if (this.curIndex > this.slideList.length - 1) this.curIndex = 0;
+        },
+        stopPlay(){
+            console.log(777);
+            window.clearInterval(this.timer);
+            this.timer = null;
         }
     },
     created() {
-        this.$nextTick(() => {
-            this.timer = setInterval(() => {
-                this.autoPlay()
-            }, 1000)
-        })
+        // this.$nextTick(() => {
+        //     this.timer = setInterval(() => {
+        //         this.autoPlay()
+        //     }, 1000)
+        // })
     },
 }
 </script>
