@@ -20,12 +20,17 @@
                     @click="handleCheckbboxClick(i)"
                     :checked="item.curChecked"
                 />-->
-                <i>{{item.state==='open'?'-':'+'}}</i>
+                <i
+                    @click="expandNode($event,i,item)"
+                    class="iconfont"
+                    :class="item.state==='open'?'icon-Decrease':'icon-Increase'"
+                    v-if="item.children"
+                ></i>
                 <span
                     @click="expandNode($event,i,item)"
                     :isLastNode="!item.children"
                     :expand="this_expand"
-                >{{item.label}}---> {{vLeval+i}}---->{{!!item.children}} =={{item.state}}</span>
+                >{{item.label}}---> {{vLeval+i}}---->{{!!item.children}} =={{item.state}}--->{{state_co}}</span>
             </div>
             <tree-node :data="item.children" :state="item.state" :vLeval="vLeval+i+'-'"></tree-node>
         </li>
@@ -105,6 +110,7 @@ export default {
         },
         expandNode(e, index, item) {
             if (!this.$children) return;
+            item.state = item.state === 'open' ? 'close' : 'open'
             this.this_expand = !this.this_expand;
             const isshow = this.$children[index].state_co
             this.$children[index].state_co = isshow === 'close' ? 'open' : 'close';

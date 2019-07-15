@@ -18,7 +18,7 @@
         color:#000;
         cursor: pointer;
         &:hover{
-            border-color:var(--base_color);
+            /* border-color:var(--base_color); */
             opacity: 0.8;
         }
     }
@@ -28,7 +28,7 @@
         border: 1px solid;
         border-color: val(--base_border_color);
         &:hover{
-            border-color:var(--base_color);
+            /* border-color:var(--base_color); */
             opacity: 0.8;
         }
     }
@@ -38,7 +38,7 @@
         border: 1px solid;
         border-color: val(--base_border_color);
         &:hover{
-            border-color:var(--base_color);
+            /* border-color:var(--base_color); */
             opacity: 0.8;
         }
     }
@@ -47,7 +47,7 @@
         cursor: pointer;border: 1px solid;
         border-color: val(--base_border_color);
         &:hover{
-            border-color:var(--base_color);
+            /* border-color:var(--base_color); */
             opacity: 0.8;
         }
     }

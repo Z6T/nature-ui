@@ -8,7 +8,7 @@
             </template>
         </nt-table>
         <hr />
-        <!-- <nt-swiper></nt-swiper> -->
+        <nt-swiper></nt-swiper>
         <hr />
         <nt-transfer :data="datatransfer" :targetKeys="targetKeys" @onChange="handleCHangeTranfsd"></nt-transfer>
 

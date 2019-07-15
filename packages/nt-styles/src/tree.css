@@ -1,13 +1,17 @@
 @b nt-tree{
     /* background-color: #333333; */
     @e div  ul{
+        list-style: none;
         font-size: 14px;
         color: #606266;
         & div{
             display: inline-block;
             cursor: pointer;
         }
-        & div:hover{
+        & div span{
+            margin-left:10px;
+        }
+        & div span:hover{
             background-color: #e5eaf2;
         }
     }
@@ -18,4 +22,6 @@
 .drag-over-node {
     background-color: #cdd3dc;
 }
-
+i{
+    color:var(--base_color);
+}
