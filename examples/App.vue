@@ -10,11 +10,9 @@
         <hr />
         <!-- <nt-swiper></nt-swiper> -->
         <hr />
-        <nt-transfer :data="datatransfer" :targetKeys="targetKeys"
-        @onChange="handleCHangeTranfsd"
-        ></nt-transfer>
+        <nt-transfer :data="datatransfer" :targetKeys="targetKeys" @onChange="handleCHangeTranfsd"></nt-transfer>
 
-        <nt-tree></nt-tree>
+        <nt-tree :data="treeData" @node-click="handTreeClick"></nt-tree>
         <hr />
         <nt-select :options="options" v-model="sVal"></nt-select>
         ==={{sVal}}
@@ -80,6 +78,60 @@ export default {
                 value: '3'
             }],
             sVal: '3',
+            treeData: [
+                {
+                    label: '西游记',
+                    'id': '111',
+                    state: 'open',
+                    children: [
+                        {
+                            label: '孙悟空',
+                            id: '111-1'
+                        },
+                        {
+                            label: '猪八戒',
+                            id: '111-2'
+                        }
+                    ]
+                },
+                {
+                    label: '三国演义',
+                    id: '222',
+                    children: [
+                        {
+                            label: '关羽',
+                            id: '222-1',
+                            state: 'open',
+                            children: [
+                                {
+                                    label: '关平',
+                                    id: '222-1-1'
+                                }
+                            ]
+                        },
+                        {
+                            label: '张飞',
+                            id: '222-2',
+                            children: [
+                                {
+                                    label: '张苞',
+                                    id: '222-2-1'
+                                }
+                            ]
+                        },
+                        {
+                            label: '刘备',
+                            id: '222-3',
+                            children: [
+                                {
+                                    label: '阿斗',
+                                    id: '222-3-1'
+                                }
+                            ]
+                        },
+                    ]
+                },
+            ],
             title: [
                 {
                     label: '机构编号',
@@ -177,7 +229,7 @@ export default {
         }
     },
     methods: {
-        handleCHangeTranfsd(newT){
+        handleCHangeTranfsd(newT) {
             console.log(newT);
         },
         handleCick(data) {
@@ -213,6 +265,9 @@ export default {
         },
         errorloading() {
             this.$loadingbar.error();
+        },
+        handTreeClick(item) {
+            console.log('item :', item);
         }
     }
 };

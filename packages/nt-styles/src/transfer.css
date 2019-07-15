@@ -44,6 +44,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 20%;
 }
 
 .arrowDisable{
@@ -55,7 +56,6 @@
 
 input[type='checkbox']{
     outline: none;
-    vertical-align: sub;
 }
 
 .disabled{
