@@ -10,9 +10,9 @@
             :disable="disabled"
             :class="[isChecked?'icon-nt-checkbox_checked':'icon-nt-checkbox_unchecked','iconfont','nt-checkbox__icon']"
             @change="handleChange"
-        >
+        />
         <span class="nt-checkbox__txt" :class="isChecked?'nt-checkbox__txt_isChecked':''">
-            <slot/>
+            <slot />
         </span>
     </div>
 </template>

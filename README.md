@@ -7,11 +7,11 @@
 - DatePicker✔️
 - Dialog✔️
 - LoadingBar ✔️
-- Table
+- Table✔️
 - Tree✔️
 - Transfer✔️
 - Select✔️
-- Swiper
+- Swiper✔️
 
 
 ## Project setup

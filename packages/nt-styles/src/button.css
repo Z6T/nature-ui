@@ -1,5 +1,6 @@
 @b nt-button{
     display: inline-block;
+    margin-right: 10px;
     color: #fff;
     white-space: nowrap;
     text-align: center;
@@ -74,7 +75,6 @@
     @m disabled{
         opacity: 0.5;
         &:hover{
-            border-color:var(--base_color);
             opacity: 0.5;
             cursor: not-allowed;
         }
