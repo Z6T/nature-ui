@@ -13,7 +13,7 @@
 <nt-checkbox  v-model="situ">王司徒</nt-checkbox>
 
 <p>
-    已选择：<span v-if='banana'>香蕉</span> <span v-if='banana && apple'>,</span><span v-if='apple'>苹果</span>
+    已选择：<span v-if='zhuge'>诸葛孔明</span> <span v-if='zhuge && situ'>,</span><span v-if='situ'>王司徒</span>
   </p></div>
 <script>
 export default{
