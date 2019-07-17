@@ -4,19 +4,23 @@
 
 ### 复选框类型 
 
-默认写法,直接绑定value即可
+单个的checkbox,通过v-modelbang
 
 ::: demo 
 ```html
 <div id="checkbox">
-<nt-checkbox v-model="checked1">备选1</nt-checkbox>
-<nt-checkbox  v-model="checked1">备选2</nt-checkbox>
-</div>
+<nt-checkbox v-model="zhuge">诸葛孔明</nt-checkbox>
+<nt-checkbox  v-model="situ">王司徒</nt-checkbox>
+
+<p>
+    已选择：<span v-if='banana'>香蕉</span> <span v-if='banana && apple'>,</span><span v-if='apple'>苹果</span>
+  </p></div>
 <script>
 export default{
     data(){
         return {
-            checked1:true
+            zhuge:true,
+            situ:false
         }
     },
     methods:{
