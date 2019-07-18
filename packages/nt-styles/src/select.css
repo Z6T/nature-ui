@@ -1,16 +1,18 @@
 @b nt-select{
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
     font-size:14px;
-    i{
+    display: flex;
+    align-items: center;
+    i.tip{
         position: relative;
         right: 22px;
         color: #9aa1b1;
     }
-    input{
+    input,p{
         font-size:14px;
         width: 160px;
-        height: 30px;
+        min-height: 30px;
         margin-bottom: 3px;
         -webkit-appearance: none;
         background-color: #fff;
@@ -29,9 +31,13 @@
         &:focus{
             border-color:var(--base_color);
         }
+        &:active{
+            border-color:var(--base_color);
+        }
     }
     @e ul{
         position: absolute;
+        top: 35px;
         z-index: 9999;
         width: 200px;
         padding-left:0;
@@ -45,7 +51,7 @@
         box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
         box-sizing: border-box;
         @e li{
-            padding:4px 15px;
+            padding:2px 15px;
             color:#333;
             cursor: pointer;
             @m selected{
@@ -54,16 +60,29 @@
             }
         }
         &:before{
-            display:block;
-            content:'';
-            border-width:8px 8px 8px 8px;
-            border-style:solid;
-            border-color:transparent transparent #fff transparent;
-            
-            /* 定位 */
-            position:absolute;
-            left:20%;
-            top:-16px;
+            display: block;
+            content: '';
+            width: 10px;
+            transform: rotate(45deg);
+            height: 10px;
+            border: 1px solid #dcdfe6;
+            position: absolute;
+            left: 20%;
+            top: -6px;
+            background: #fff;
+            border-bottom: 0;
+            border-right: 0;
         }
     }
+}
+
+.itemblock{
+    font-size: 12px;
+    width: 90px;
+    box-sizing: border-box;
+    display: block;
+    padding: 2px;
+    margin: 2px;
+    line-height: 20px;
+    background-color: #f1f1f1;
 }

@@ -24,7 +24,7 @@ export default {
 
 <style lang="less">
 .slider {
-    width: 220px;
+    width: 235px;
     height: 100%;
     box-sizing: border-box;
     padding: 20px;

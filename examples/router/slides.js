@@ -21,7 +21,11 @@ export default [{
         type: 'doc'
     }, {
         path: 'checkbox',
-        label: 'checkbox 多选',
+        label: 'checkbox 复选框',
+        type: 'doc'
+    }, {
+        path: 'checkboxlist',
+        label: 'checkboxlist 复选框组',
         type: 'doc'
     }, {
         path: 'icon',

@@ -32,7 +32,7 @@ export default {
     flex-direction: column;
     .mainContnt {
         flex: 1;
-        padding-left: 200px;
+        padding-left: 180px;
         display: flex;
 
         .rv {

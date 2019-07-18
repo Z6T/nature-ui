@@ -104,21 +104,22 @@ pre, code {
   .md p {
     /* !important is needed here because Hotmail/Outlook.com uses !important to
        kill the margin in <p>. We need this to win. */
-    margin: 0 0 1.2em 0 !important;
+    /* margin: 0 0 1.2em 0 !important; */
+    display:flex;
   }
   
-  table, pre, dl, blockquote, q,.md  ul, .md ol {
+  /* table, pre, dl, blockquote, q,.md  ul, .md ol {
     margin: 1.2em 0;
-  }
+  } */
   
-  .md ul, ol {
+  /* .md ul, ol {
     padding-left: 2em;
-  }
+  } */
   
-  .md li {
+  /* .md li {
     margin: 0.5em 0;
     font-size: 16px;
-  }
+  } */
   
   /* Space paragraphs in a list the same as the list itself. */
   .md li p {
@@ -127,17 +128,17 @@ pre, code {
   }
   
   /* Smaller spacing for sub-lists */
-  .md ul ul, .md ul ol,.md  ol ul,.md  ol ol {
+  /* .md ul ul, .md ul ol,.md  ol ul,.md  ol ol {
     margin: 0;
     padding-left: 1em;
   }
-  
+   */
   /* Use letters for unordered-lists. (Like Github.) */
-  .md ul ul,.md ul {
+  /* .md ul ul,.md ul {
     list-style-type: square;
     font-size: 16px;
   }
-  
+   */
   /* Use letters for sub-ordered-lists. (Like Github.) */
   .md ol ol,.md  ul ol {
     list-style-type: lower-roman;
