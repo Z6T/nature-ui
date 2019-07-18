@@ -97,6 +97,10 @@ export default {
     },
     methods: {
         removeItemByKey(key) {
+            //  if (this.isMul&&this.firstOnce) {
+            //         this.firstOnce = false;
+            //         this.mulSelectItems = this.mulSelectItems.concat(this.firstInitSelects)
+            //  }
             if (typeof this.mulSelectItems === 'object') {
                 const cilckedItemIndex = this.mulSelectItems.findIndex(item => item.value === key);
                 this.mulSelectItems.splice(cilckedItemIndex, 1);
@@ -113,14 +117,18 @@ export default {
         },
         // 选择每一线
         selectItemEv(e) {
-            const ele = e.target;
+            console.log(e);
+            let ele = e.target;
+            if(ele.tagName==='SPAN'){
+                ele = ele.parentNode;
+            }
             let [text, value] = [ele.innerText, ele.getAttribute('value')]
             this.selectItem = { text, value }
             if (this.isMul) {
-                if (this.firstOnce) {
-                    this.firstOnce = false;
-                    this.mulSelectItems = this.mulSelectItems.concat(this.firstInitSelects)
-                }
+                // if (this.firstOnce) {
+                //     this.firstOnce = false;
+                //     this.mulSelectItems = this.mulSelectItems.concat(this.firstInitSelects)
+                // }
                 const cilckedItemIndex = this.mulSelectItems.findIndex(item => item.value === value);
                 cilckedItemIndex === -1 ? this.mulSelectItems.push(this.selectItem) : this.mulSelectItems.splice(cilckedItemIndex, 1)
                 this.$emit('input', [...this.mulSelectItems].map(item => item = item.value));
@@ -144,6 +152,12 @@ export default {
                     , false)
             }
         }
+    },
+    created(){
+           if (this.isMul){
+
+               this.mulSelectItems=this.firstInitSelects
+           }
     },
     mounted() {
         const ipt = this.$refs.ntselect_input;
