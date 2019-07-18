@@ -8,15 +8,20 @@
             readonly
             placeholder="请选择"
             ref="ntselect_input"
-            :value="selectItem&&selectItem.text"
+            :value="selectItem&&selectItem.text||options[firstInitSelects].text"
         />
         <p v-else @click="openOptions" ref="ntselect_mulinput">
-            <span v-for="(item,key) in mulSelectItems" :key="key+'item'" class="itemblock">
+            <span
+                v-for="(item,key) in mulSelectItems.length?mulSelectItems:firstInitSelects"
+                :key="key+'item'"
+                class="itemblock"
+            >
                 {{item.text.slice(0,5)}}{{item.text.length>5?'...':''}}
+                <!-- {{item.text}} -->
                 <nt-icon
                     icon="close"
                     style="font-size:14px;float:right"
-                    @click="removeItem($event,item.key)"
+                    @click="removeItem($event,item.value)"
                 ></nt-icon>
             </span>
         </p>
@@ -49,14 +54,15 @@ export default {
                 value: this.value,
                 text: ''
             },
-            mulSelectItems: []
+            mulSelectItems: [],
+            firstOnce: true
         }
     },
     props: {
         options: {
             type: Array
         },
-        value: [String, Number, Boolean],
+        value: [String, Number, Boolean, Array],
         multiple: String
     },
     computed: {
@@ -68,13 +74,34 @@ export default {
         },
         isMul() {
             return this.hasProp('multiple');
+        },
+        /**
+         * 如果是多选:返回一个item的数组
+         * 单选则返回被选项index
+         */
+        firstInitSelects: {
+            get() {
+                if (this.isMul) {
+                    const arrIndex = []
+                    this.value.forEach(valueimte => {
+                        arrIndex.push(this.options.find(item => item.value == valueimte))
+                    })
+                    return arrIndex;
+                }
+                return this.options.findIndex(item => item.value == this.value)
+            },
+            set(newVal) {
+                this.mulSelectItems = newVal;
+            }
         }
     },
     methods: {
         removeItemByKey(key) {
-            const cilckedItemIndex = this.mulSelectItems.findIndex(item => item.value === key);
-            this.mulSelectItems.splice(cilckedItemIndex, 1);
-            this.$emit('input', [...this.mulSelectItems].map(item => item = item.value));
+            if (typeof this.mulSelectItems === 'object') {
+                const cilckedItemIndex = this.mulSelectItems.findIndex(item => item.value === key);
+                this.mulSelectItems.splice(cilckedItemIndex, 1);
+                this.$emit('input', [...this.mulSelectItems].map(item => item = item.value));
+            }
         },
         removeItem(e, key) {
             this.removeItemByKey(key);
@@ -84,14 +111,18 @@ export default {
             let props = this.$options.propsData;
             return props.hasOwnProperty(name);
         },
+        // 选择每一线
         selectItemEv(e) {
             const ele = e.target;
             let [text, value] = [ele.innerText, ele.getAttribute('value')]
             this.selectItem = { text, value }
             if (this.isMul) {
+                if (this.firstOnce) {
+                    this.firstOnce = false;
+                    this.mulSelectItems = this.mulSelectItems.concat(this.firstInitSelects)
+                }
                 const cilckedItemIndex = this.mulSelectItems.findIndex(item => item.value === value);
                 cilckedItemIndex === -1 ? this.mulSelectItems.push(this.selectItem) : this.mulSelectItems.splice(cilckedItemIndex, 1)
-
                 this.$emit('input', [...this.mulSelectItems].map(item => item = item.value));
             } else {
                 this.$emit('input', this.selectItem.value);
@@ -107,22 +138,23 @@ export default {
                     this.showUl = false;
                 }
             }
-            document.removeEventListener('click', fn);
-            document.addEventListener('click', fn
-                , false)
+            if (this.isMul && document) {
+                document.removeEventListener('click', fn);
+                document.addEventListener('click', fn
+                    , false)
+            }
         }
     },
     mounted() {
         const ipt = this.$refs.ntselect_input;
-        const mulipt = this.$refs.ntselect_mulinput;
-        let inputTarget = this.isMul ? mulipt : ipt
-        const ulF = this.$refs.ulwapper;
-        ipt.addEventListener('focus', () => {
-            this.showUl = !this.showUl
-        })
-        ipt.addEventListener('blur', () => {
-            this.showUl = false
-        })
+        if (ipt) {
+            ipt.addEventListener('focus', () => {
+                this.showUl = !this.showUl
+            })
+            ipt.addEventListener('blur', () => {
+                this.showUl = false
+            })
+        }
 
     },
 }

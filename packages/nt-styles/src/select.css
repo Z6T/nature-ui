@@ -27,11 +27,7 @@
         transition: border-color .2s ;
         outline:none;
         cursor: pointer;
-       
         &:focus{
-            border-color:var(--base_color);
-        }
-        &:active{
             border-color:var(--base_color);
         }
     }
@@ -51,7 +47,7 @@
         box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
         box-sizing: border-box;
         @e li{
-            padding:2px 15px;
+            padding:5px 15px;
             color:#333;
             cursor: pointer;
             @m selected{
@@ -82,6 +78,7 @@
     box-sizing: border-box;
     display: block;
     padding: 2px;
+    padding-left: 4px;
     margin: 2px;
     line-height: 20px;
     background-color: #f1f1f1;

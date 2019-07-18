@@ -101,10 +101,10 @@ pre, code {
 
   MarkDown
   */
-  .md p {
+  .md > p {
     /* !important is needed here because Hotmail/Outlook.com uses !important to
        kill the margin in <p>. We need this to win. */
-    /* margin: 0 0 1.2em 0 !important; */
+    margin: 0 0 1.2em 0 !important;
     display:flex;
   }
   
