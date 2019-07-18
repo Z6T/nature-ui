@@ -20,6 +20,10 @@ export default [{
         label: 'button 按钮',
         type: 'doc'
     }, {
+        path: 'checkbox',
+        label: 'checkbox 多选',
+        type: 'doc'
+    }, {
         path: 'icon',
         label: 'icon 图标',
         type: 'doc'
@@ -34,10 +38,6 @@ export default [{
     }, {
         path: 'radio',
         label: 'radio 单选',
-        type: 'doc'
-    }, {
-        path: 'checkbox',
-        label: 'checkbox 多选',
         type: 'doc'
     }, {
         path: 'switch',

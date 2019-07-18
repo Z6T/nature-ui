@@ -22,6 +22,6 @@
 .drag-over-node {
     background-color: #cdd3dc;
 }
-i{
+.nt-tree i{
     color:var(--base_color);
 }
