@@ -1,19 +1,23 @@
 @b nt-select{
     position: relative;
-    /* display: inline-block; */
+    display: inline-block;
     font-size:14px;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     i.tip{
-        position: relative;
-        right: 22px;
+        position: absolute;
+        top: 50%;
+        right:14px;
+        transform: translateY(-50%);
         color: #9aa1b1;
     }
     input,p{
+        vertical-align: top;
         font-size:14px;
         width: 160px;
         min-height: 30px;
         margin-bottom: 3px;
+        margin-right:10px;
         -webkit-appearance: none;
         background-color: #fff;
         background-image: none;
@@ -82,4 +86,9 @@
     margin: 2px;
     line-height: 20px;
     background-color: #f1f1f1;
+}
+
+.input_disabled{
+    cursor: not-allowed !important;
+    background-color: #ccc !important;
 }

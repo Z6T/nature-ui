@@ -8,9 +8,11 @@
             readonly
             placeholder="请选择"
             ref="ntselect_input"
-            :value="selectItem&&selectItem.text||options[firstInitSelects].text"
+            :disabled="disabled"
+            :class="disabled?'input_disabled':''"
+            :value="selectItem&&selectItem.text||firstInitSelects.text"
         />
-        <p v-else @click="openOptions" ref="ntselect_mulinput">
+        <p v-else @click="openOptions" ref="ntselect_mulinput"  :class="disabled?'input_disabled':''">
             <span
                 v-for="(item,key) in mulSelectItems.length?mulSelectItems:firstInitSelects"
                 :key="key+'item'"
@@ -26,7 +28,7 @@
             </span>
         </p>
         <i class="iconfont tip" :class="showUl?'icon-arrowTop':'icon-arrowBottom'"></i>
-        <ul class="nt-select__ul" v-show="showUl" @mousedown="selectItemEv" ref="ulwapper">
+        <ul class="nt-select__ul" :style="{top:(35+(mulSelectItems.length-1)*26)+'px'}" v-show="showUl" @mousedown="selectItemEv" ref="ulwapper">
             <li
                 class="nt-select__ul__li"
                 :class="item.value===selectItem.value?'nt-select__ul__li_selected':''"
@@ -54,7 +56,7 @@ export default {
                 value: this.value,
                 text: ''
             },
-            mulSelectItems: [],
+            mulSelectItems: [], // 多选的数组
             firstOnce: true
         }
     },
@@ -63,10 +65,10 @@ export default {
             type: Array
         },
         value: [String, Number, Boolean, Array],
-        multiple: String
+        multiple: String,
+        disabled:Boolean
     },
     computed: {
-        // eslint-disable-next-line vue/return-in-computed-property
         selectText() {
             if (this.value) {
                 return this.options.filter(item => item.value === this.value)[0].text;
@@ -77,18 +79,18 @@ export default {
         },
         /**
          * 如果是多选:返回一个item的数组
-         * 单选则返回被选项index
+         * 单选则返回被选项的一个item
          */
         firstInitSelects: {
             get() {
                 if (this.isMul) {
                     const arrIndex = []
                     this.value.forEach(valueimte => {
-                        arrIndex.push(this.options.find(item => item.value == valueimte))
+                        arrIndex.push(this.options.find(item => item.value === valueimte))
                     })
                     return arrIndex;
                 }
-                return this.options.findIndex(item => item.value == this.value)
+                return this.options.find(item => item.value === this.value)
             },
             set(newVal) {
                 this.mulSelectItems = newVal;
@@ -97,10 +99,6 @@ export default {
     },
     methods: {
         removeItemByKey(key) {
-            //  if (this.isMul&&this.firstOnce) {
-            //         this.firstOnce = false;
-            //         this.mulSelectItems = this.mulSelectItems.concat(this.firstInitSelects)
-            //  }
             if (typeof this.mulSelectItems === 'object') {
                 const cilckedItemIndex = this.mulSelectItems.findIndex(item => item.value === key);
                 this.mulSelectItems.splice(cilckedItemIndex, 1);
@@ -108,6 +106,7 @@ export default {
             }
         },
         removeItem(e, key) {
+              if(this.disabled) return
             this.removeItemByKey(key);
             e.stopPropagation();
         },
@@ -115,9 +114,8 @@ export default {
             let props = this.$options.propsData;
             return props.hasOwnProperty(name);
         },
-        // 选择每一线
+        // 选择每一项
         selectItemEv(e) {
-            console.log(e);
             let ele = e.target;
             if(ele.tagName==='SPAN'){
                 ele = ele.parentNode;
@@ -125,19 +123,20 @@ export default {
             let [text, value] = [ele.innerText, ele.getAttribute('value')]
             this.selectItem = { text, value }
             if (this.isMul) {
-                // if (this.firstOnce) {
-                //     this.firstOnce = false;
-                //     this.mulSelectItems = this.mulSelectItems.concat(this.firstInitSelects)
-                // }
                 const cilckedItemIndex = this.mulSelectItems.findIndex(item => item.value === value);
                 cilckedItemIndex === -1 ? this.mulSelectItems.push(this.selectItem) : this.mulSelectItems.splice(cilckedItemIndex, 1)
-                this.$emit('input', [...this.mulSelectItems].map(item => item = item.value));
+                const newArrKey =  [...this.mulSelectItems].map(item => item = item.value);
+                this.$emit('input',newArrKey);
+                this.$emit('change',newArrKey);
             } else {
-                this.$emit('input', this.selectItem.value);
+                const v =  this.selectItem.value;
+                this.$emit('input',v);
+                this.$emit('change', v);
                 this.showUl = false;
             }
         },
         openOptions() {
+            if(this.disabled) return
             this.showUl = true;
             const fn = (e) => {
                 if (e.target.tagName === 'I') return
@@ -155,7 +154,6 @@ export default {
     },
     created(){
            if (this.isMul){
-
                this.mulSelectItems=this.firstInitSelects
            }
     },
@@ -163,6 +161,7 @@ export default {
         const ipt = this.$refs.ntselect_input;
         if (ipt) {
             ipt.addEventListener('focus', () => {
+                if(this.disabled) return
                 this.showUl = !this.showUl
             })
             ipt.addEventListener('blur', () => {
