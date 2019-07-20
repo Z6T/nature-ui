@@ -36,6 +36,7 @@
             @e confirm{
                 float: right;
                 padding: 3px 10px;
+                border:1px solid;
                 border-color: #1E9FFF;
                 background-color: var(--base_color);
                 color: #fff;
@@ -46,6 +47,7 @@
                 float: right;
                 padding: 3px 10px;
                 margin-left: 10px;
+                border:1px solid;
                 border-color: var(--base_border_color);
                 background-color: #fff;
                 color: #000;

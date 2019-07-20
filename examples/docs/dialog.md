@@ -22,10 +22,21 @@ export default{
             const _this = this;
             this.$dialog({
                  showMask:true,
+                 justOkBtn:true,
                  confirm(){
-                     _this.clickText = '点击了确定';
+                     _this.clickText = _this.clickText ?'' :'点击了确定';
                      this.dialogClose(); // 调用dialogClose方法关闭弹窗
                  }
+            }).then(() => {
+               
+            });
+        },
+        showHwModal(){
+            const _this = this;
+            this.$dialog({
+                 showMask:true,
+                 height:300,
+                 width:600
             }).then(() => {
                
             });
@@ -91,7 +102,7 @@ export default{
 ::: 
 
 
-## 配置确定按钮点击事件
+## 配置确定按钮点击事件,只显示确定按钮
 
 直接配置参数confirm即可,注:如果这个参数的方法使用了箭头函数,将不能再通过this调用dialogClose方法关闭弹窗
 
@@ -111,8 +122,9 @@ export default{
             const _this = this;
             this.$dialog({
                  showMask:true,
+                 justOkBtn:true,
                  confirm(){
-                    _this.clickText = '点击了确定';
+                    _this.clickText = _this.clickText ?'' :'点击了确定';
                     this.dialogClose(); // 此处直接通过this调用dialogClose方法关闭弹窗
                  }
             }).then(() => {
@@ -126,8 +138,18 @@ export default{
 ```
 ::: 
 
+### Attributes
+
+| 参数     | 说明           | 类型    | 可选值                               | 默认值    |
+| :------- | :------------- | :------ | :----------------------------------- | :-------- |
+| showMask     |    是否显示遮罩层    | Boolean  |`true`,`false` | `false` |
+| justOkBtn | 是否只显示确定按钮   | boolean | `true` `false`                       | `false`   |
+| showHeader | 是否显示头部header   | boolean | `true` `false`                       | `true`   |
+| title | 头部标题   | boolean | 提示                    |    |
+| confirmTxt | 确定按钮的文字   | string | -                       | `确定`   |
+| concelTxt | 取消按钮的文字   | string | -                       | `取消`   |
+| confirm | 点击确定按钮执行的方法   | Function | -                       |    |
+| concel | 点击取消按钮执行的方法   | Function | -                       |    |
 ### Events
 
-| 事件名称 | 说明     | 回调参数 |
-| :------- | :------- | :------: |
-| click  | 直接绑定click事件即可 |   Event     |
+ this.$dialog()返回一个pormise对象，可以通过.then进行处理回调

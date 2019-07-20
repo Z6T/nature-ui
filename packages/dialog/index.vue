@@ -3,10 +3,9 @@
         class="nt-dialog"
         :class="showMask?'nt-dialog_mask':''"
         v-if="dialogShow"
-        :style="{height:height+'px',width:width+'px'}"
     >
-        <div class="nt-dialog__content">
-            <div class="nt-dialog__content__header" v-if="showHeader">{{title}}</div>
+        <div class="nt-dialog__content" :style="{height:height+'px',width:width+'px'}">
+            <div class="nt-dialog__content__header" v-if="showHeader">{{height}}{{title}}</div>
             <div class="nt-dialog__content__body" v-html="body">
                 <!-- <slot></slot> -->
             </div>
