@@ -48,8 +48,8 @@ export default [{
         label: 'switch 开关',
         type: 'doc'
     }, {
-        path: 'picker',
-        label: 'picker 选择框',
+        path: 'datepicker',
+        label: 'datepicker 选择框',
         type: 'doc'
     }, {
         path: 'table',
