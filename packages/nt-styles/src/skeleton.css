@@ -1,0 +1,33 @@
+@b nt-skeleton {
+  box-sizing: border-box;
+  height: 0;
+  margin: 10px;
+  animation: nt-opcty 2s infinite linear;
+}
+@keyframes nt-opcty {
+  0% {
+    opacity: 1;
+  }
+  10%,
+  90% {
+    opacity: 0.9;
+  }
+  20%,
+  80% {
+    opacity: 0.8;
+  }
+  30%,
+  70% {
+    opacity: 0.7;
+  }
+  40%,
+  60% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.95;
+  }
+}

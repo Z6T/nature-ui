@@ -208,7 +208,6 @@ export default {
                 brand: '在线运行'
             }, {
                 number: 333,
-                // english: 222,
                 name: '英皇读书',
                 type: '金融',
                 brand: '在线运行'

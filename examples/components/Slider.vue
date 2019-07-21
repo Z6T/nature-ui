@@ -1,5 +1,5 @@
 <template>
-    <div class="slider">
+    <div class="slider" :style="{overflow:of}" @mouseenter="of='auto'"  @mouseleave="of='hidden'">
         <ul class="slider_group__wp" v-for="(item, index) in data" :key="index">
             <li class="slider_group__wp__item">
                 <p class="slider_group__wp__item__label">{{item.label}}</p>
@@ -16,6 +16,11 @@
 <script>
 export default {
     name: 'slider',
+    data(){
+        return{
+            of:'hidden'
+        }
+    },
     props: {
         data: Array
     }
@@ -23,8 +28,10 @@ export default {
 </script>
 
 <style lang="less">
+// .slider::-webkit-scrollbar {display:none}
+
 .slider {
-    width: 235px;
+    width: 260px;
     height: 100%;
     box-sizing: border-box;
     padding: 20px;
@@ -36,11 +43,14 @@ export default {
         font-size: 18px;
         line-height: 42px;
     }
+    & li{
+        padding:3px 0;
+    }
     & a {
         width: 100%;
         display: inline-block;
         line-height: 28px;
-        font-size: 14px;
+        font-size: 15px;
         color: #666666;
         text-decoration: none;
         cursor: pointer;

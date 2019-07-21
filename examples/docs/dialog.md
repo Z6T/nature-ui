@@ -6,6 +6,15 @@ export default{
             }
         },
     methods:{
+        showHwModal(){
+            const _this = this;
+            this.$dialog({
+                 height:300,
+                 width:300,
+                 showMask:true,
+                 justOkBtn:true
+            })
+        },
         showModal(){
             this.$dialog().then(() => {
                 alert('面板已经打开')
@@ -55,7 +64,7 @@ export default{
 
 ## 基本用法
 
-直接通过`this.$dialog([options])`调用即可
+直接通过`this.$dialog([options])`调用即可，dialog的内容通过body传递，默认是唱、跳、rap、篮球、music
 
 ::: demo 
 ```html
@@ -137,11 +146,35 @@ export default{
 
 ```
 ::: 
+## 配置自定义宽高
+
+::: demo 
+```html
+<nt-button type="primary" @click="showHwModal">点击</nt-button>
+
+<script>
+export default{
+         showHwModal(){
+            const _this = this;
+            this.$dialog({
+                 height:300,
+                 width:300,
+                 showMask:true,
+                 justOkBtn:true
+            })
+        },
+  }
+}
+</script>
+
+```
+::: 
 
 ### Attributes
 
 | 参数     | 说明           | 类型    | 可选值                               | 默认值    |
 | :------- | :------------- | :------ | :----------------------------------- | :-------- |
+| body     |    dialog的body部分    | String  |-|唱、跳、rap、篮球、music|
 | showMask     |    是否显示遮罩层    | Boolean  |`true`,`false` | `false` |
 | justOkBtn | 是否只显示确定按钮   | boolean | `true` `false`                       | `false`   |
 | showHeader | 是否显示头部header   | boolean | `true` `false`                       | `true`   |

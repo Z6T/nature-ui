@@ -12,6 +12,7 @@ import Swiper from './swiper';
 import Table from './table';
 import TableColumn from './table/tablecolumn';
 import Icon from './icon';
+import Skeleton from './skeleton';
 
 // 所有组件列表
 const components = [
@@ -28,7 +29,8 @@ const components = [
     Swiper,
     Table,
     TableColumn,
-    Icon
+    Icon,
+    Skeleton
 ]
 // 定义 install 方法，接收 Vue 作为参数
 const install = function (Vue) {

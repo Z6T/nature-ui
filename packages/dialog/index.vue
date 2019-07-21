@@ -5,7 +5,7 @@
         v-if="dialogShow"
     >
         <div class="nt-dialog__content" :style="{height:height+'px',width:width+'px'}">
-            <div class="nt-dialog__content__header" v-if="showHeader">{{height}}{{title}}</div>
+            <div class="nt-dialog__content__header" v-if="showHeader">{{title}}</div>
             <div class="nt-dialog__content__body" v-html="body">
                 <!-- <slot></slot> -->
             </div>
@@ -33,8 +33,8 @@ export default {
         }
     },
     props: {
-        height: Number,
-        width: Number,
+        height: [Number,String],
+        width: [Number,String],
         showMask: {
             type: Boolean,
             default: false
@@ -79,7 +79,7 @@ export default {
             if (this.confirm) {
                 this.confirm()
             } else if (this.justOkBtn) {
-                this.concel()
+                this.concelEv()
             }
         },
         dialogClose() {
