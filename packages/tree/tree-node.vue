@@ -30,7 +30,7 @@
                     @click="expandNode($event,i,item)"
                     :isLastNode="!item.children"
                     :expand="this_expand"
-                >{{item.label}}---> {{vLeval+i}}---->{{!!item.children}} =={{item.state}}--->{{state_co}}</span>
+                >{{item.label}}</span>
             </div>
             <tree-node :data="item.children" :state="item.state" :vLeval="vLeval+i+'-'"></tree-node>
         </li>

@@ -28,15 +28,13 @@ export default {
     },
     methods: {
         go() {
-            console.log('go');
-
             this.progressVal += this.step;
             this.barColor = 'green'
             setTimeout(() => {
                 if (this.progressVal < 94) {
                     this.go();
                 }
-            }, 20);
+            }, 15);
         },
         finishBar() {
             this.progressVal = 100;

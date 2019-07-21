@@ -3,6 +3,7 @@
     @e div  ul{
         list-style: none;
         font-size: 14px;
+        margin-left: 30px;
         color: #606266;
         & div{
             display: inline-block;
@@ -24,4 +25,7 @@
 }
 .nt-tree i{
     color:var(--base_color);
+}
+.nt-tree li{
+    margin: 10px 0;
 }
