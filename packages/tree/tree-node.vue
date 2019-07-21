@@ -92,6 +92,7 @@ export default {
             this.dragingIndex = null;
             const dragingLevel = this.vLeval + index;
             const arr = dragingLevel.match(/\d/g).slice(-2);
+            this.dragover = dragover
             if (!dragover.children) {
                 this.dragover.children = [];
                 this.$set(this.dragover, 'children', [])
