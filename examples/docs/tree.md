@@ -12,22 +12,26 @@ export default {
           children: [
             {
               label: "孙悟空",
-              id: "111-1"
+              id: "111-1",
+              checked: true
             },
             {
               label: "猪八戒",
-              id: "111-2"
+              id: "111-2",
+              checked: true
             }
           ]
         },
         {
           label: "三国演义",
           id: "222",
+          state: "open",
           children: [
             {
               label: "关羽",
               id: "222-1",
               state: "open",
+              checked: true,
               children: [
                 {
                   label: "关平",

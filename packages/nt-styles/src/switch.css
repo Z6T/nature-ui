@@ -1,0 +1,35 @@
+@b nt-switch{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    @e label {
+        width: 70px;
+        height: 30px;
+        display: inline-block;
+        border-radius: 20px;
+        background: #ccc;
+        cursor: pointer;
+        input{
+            display: none;
+        }
+    }
+    &:before{
+        position: absolute;
+        left: 2px;
+        top:2px;
+        content:'';
+        display: inline-block;
+        width: 30px;
+        height: 26px;
+        background-color: #fff;
+        border-radius: 20px;
+        transition: left 0.2s;
+        cursor: pointer;
+    }
+}
+.nt-switch-active label{
+    background-color: #3399CC;
+}
+.nt-switch-active::before{
+    left: 38px !important;
+}

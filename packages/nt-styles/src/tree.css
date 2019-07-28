@@ -10,7 +10,8 @@
             cursor: pointer;
         }
         & div span{
-            margin-left:10px;
+            /* margin-left:10px; */
+            user-select: none;
         }
         & div span:hover{
             background-color: #e5eaf2;
