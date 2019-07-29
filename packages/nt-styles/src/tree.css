@@ -1,32 +1,38 @@
-@b nt-tree{
-    /* background-color: #333333; */
-    @e div  ul{
-        list-style: none;
-        font-size: 14px;
-        margin-left: 30px;
-        color: #606266;
-        & div{
-            display: inline-block;
-            cursor: pointer;
-        }
-        & div span{
-            /* margin-left:10px; */
-            user-select: none;
-        }
-        & div span:hover{
-            background-color: #e5eaf2;
-        }
+@b nt-tree {
+  /* background-color: #333333; */
+  @e div  ul {
+    list-style: none;
+    font-size: 14px;
+    margin-left: 30px;
+    color: #606266;
+    & div {
+      display: inline-block;
+      cursor: pointer;
     }
+    & div span {
+      /* margin-left:10px; */
+      user-select: none;
+    }
+    & div span:hover {
+      background-color: #e5eaf2;
+    }
+  }
 }
-.drag-start-node{
-    background-color: #dcdfe6;
+.drag-start-node {
+  background-color: #dcdfe6;
 }
 .drag-over-node {
-    background-color: #cdd3dc;
+  background-color: #cdd3dc;
 }
-.nt-tree i{
-    color:var(--base_color);
+.nt-tree i {
+  color: var(--base_color);
 }
-.nt-tree li{
-    margin: 10px 0;
+.nt-tree li {
+  margin: 10px 0;
+}
+.icon_ic_decre {
+  font-size: 17px;
+}
+.nt-checkbox__icon {
+  margin-left: 10px;
 }

@@ -9,15 +9,22 @@
             <div>
                 <i
                     @click="expandNode($event,i,item)"
-                    class="iconfont"
+                    class="iconfont icon_ic_decre"
                     :class="item.state==='open'?'icon-Decrease':'icon-Increase'"
                     v-if="item.children"
                 ></i>
                 <input
+                    v-show="false"
+                    :id="vLeval+i"
                     type="checkbox"
                     :checked="item.checked===true"
                     @change="handleCheckbox(item)"
                 />
+                <label
+                    :for="vLeval+i"
+                    :class="[item.checked===true?'icon-nt-checkbox_checked':
+                    (item.checked==='some'?'icon-somecheck':'icon-nt-checkbox_unchecked'),'iconfont','nt-checkbox__icon']"
+                ></label>
                 {{item.checked}}
                 <span
                     @click="expandNode($event,i,item)"

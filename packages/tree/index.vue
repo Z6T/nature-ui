@@ -1,8 +1,5 @@
 <template >
     <div class="nt-tree">
-        <pre v-html="JSON.stringify(treeData,null,'\t')"></pre>
-        <hr />
-        {{leafLevalObj}}
         <div class="nt-tree__div">
             <NodeTreeNode :data="data" ref="childNodeWrapper" />
         </div>
@@ -85,26 +82,27 @@ export default {
                             childs.forEach(child => {
                                 this.$set(child, "checked", true);
                             });
+                        } else if (!ele.checked && !ele.children) {
+                            this.$set(ele, "checked", false);
                         }
 
                         // 判断当前节点下的所有叶子节点的状态.是全选?全不选?还是只有某些选
                         let every = null; let everyno = null; let some = null;
                         let hasChildFlag = ele.children && ele.children.length;
                         if (hasChildFlag) {
+
                             const thisChilds = this.getAllLeafNode(ele.children);
-                            console.log('thisChilds :', ele.label + '的childs', thisChilds);
                             every = this.isEveryChildChecked(thisChilds, true) // 是否全选
                             everyno = this.isEveryChildChecked(thisChilds, false) // 是否全不选
-                            // some = this.isSomeChildChecked(thisChilds)
+                            console.log('ele.labelevery :', ele.label, every);
+                            console.log('ele.labeleveryno :', ele.label, everyno);
                             if (every) {
                                 this.$set(ele, "checked", true);
-                            } else if (everyno || !hasChildFlag) {
+                            } else if (everyno) {
                                 this.$set(ele, "checked", false);
                             } else if (hasChildFlag) {
                                 this.$set(ele, "checked", 'some');
                             }
-                            // console.log('ele every:', ele.label, every);
-                            // console.log('ele everyno:', ele.label, everyno);
                         } else {
                             this.$set(ele, "checked", ele.checked)
                         }
