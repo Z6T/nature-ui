@@ -21,6 +21,7 @@
                     @change="handleCheckbox(item)"
                 />
                 <label
+                    v-if="fatherTree.showcheckbox"
                     :for="vLeval+i"
                     :class="[item.checked===true?'icon-nt-checkbox_checked':
                     (item.checked==='some'?'icon-somecheck':'icon-nt-checkbox_unchecked'),'iconfont','nt-checkbox__icon']"

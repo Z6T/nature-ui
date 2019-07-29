@@ -12,6 +12,7 @@
         width:80px;
         height:60px;
         font-size:12px;
+        cursor:pointer;
     }
 </style>
 # Icon 小图标
@@ -210,11 +211,10 @@
         <span class='iconitem'>arrow-down</span>
     </span>
     <span class='iconwrapper'>
-        <nt-icon icon="showmore"></nt-icon>
-        <span class='iconitem'>showmore</span>
+        <nt-icon icon="more"></nt-icon>
+        <span class='iconitem'>more</span>
     </span>
 </div>
-
 
 ```
 ::: 

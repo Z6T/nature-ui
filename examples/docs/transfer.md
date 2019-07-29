@@ -2,7 +2,7 @@
 
 ## 基本用法
 
-**data**为需要传递的左右框的所有数据，类型为Array,里边的每一项都有一个唯一的**key**,作为唯一标识，**disabled**类型为Boolean,定义该项是否禁用
+data为需要传递的左右框的所有数据，类型为Array,里边的每一项都有一个唯一的key,作为唯一标识，disabled类型为Boolean,定义该项是否禁用
 ::: demo 
 ```html
 <template>

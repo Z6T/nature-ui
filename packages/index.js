@@ -14,7 +14,7 @@ import TableColumn from './table/tablecolumn';
 import Icon from './icon';
 import Skeleton from './skeleton';
 import Switch from './switch';
-import Loading from './loading';
+import Loading from './loading/index.js';
 
 // 所有组件列表
 const components = [

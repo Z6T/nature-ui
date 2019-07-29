@@ -17,7 +17,11 @@ export default {
         };
     },
     props: {
-        data: Array
+        data: Array,
+        showcheckbox: {
+            type: Boolean,
+            default: false
+        }
     },
     data() {
         return {
@@ -127,14 +131,18 @@ export default {
         },
         treeData: {
             handler(val) {
-                this.setCheckProp(val, 'init'); // 数据变动不能再走:强制将所有child的checked置为true这个操作,因为点的可能是子元素
+                if (this.showcheckbox) {
+                    this.setCheckProp(val, 'init'); // 数据变动不能再走:强制将所有child的checked置为true这个操作,因为点的可能是子元素
+                }
             },
             deep: true,
             immediate: true
         }
     },
     created() {
-        this.setCheckProp(this.data);
+        if (this.showcheckbox) {
+            this.setCheckProp(this.data);
+        }
     }
 };
 </script>

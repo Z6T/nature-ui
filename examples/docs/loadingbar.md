@@ -21,7 +21,15 @@ export default {
 
 ### 基本用法
 
-调用`this.$loadingbar.start();this.$loadingbar.finish();this.$loadingbar.error();`分别对应**进度条开始，进度条完成，进度条错误**。
+调用
+
+```javascript
+this.$loadingbar.start();
+this.$loadingbar.finish();
+this.$loadingbar.error();
+```
+
+分别对应**进度条开始，进度条完成，进度条错误**。
 ::: demo 
 ```html
 <template>
