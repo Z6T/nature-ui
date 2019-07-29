@@ -25,7 +25,6 @@
                     :class="[item.checked===true?'icon-nt-checkbox_checked':
                     (item.checked==='some'?'icon-somecheck':'icon-nt-checkbox_unchecked'),'iconfont','nt-checkbox__icon']"
                 ></label>
-                {{item.checked}}
                 <span
                     @click="expandNode($event,i,item)"
                     :isLastNode="!item.children"
