@@ -1,5 +1,6 @@
 @b nt-tree {
   /* background-color: #333333; */
+  display: inline-block;
   @e div  ul {
     list-style: none;
     font-size: 14px;
