@@ -15,6 +15,7 @@ import Icon from './icon';
 import Skeleton from './skeleton';
 import Switch from './switch';
 import Loading from './loading/index.js';
+import Pagination from './pagination';
 
 // 所有组件列表
 const components = [
@@ -34,7 +35,8 @@ const components = [
     Icon,
     Skeleton,
     Loading,
-    Switch
+    Switch,
+    Pagination
 ]
 // 定义 install 方法，接收 Vue 作为参数
 const install = function (Vue) {

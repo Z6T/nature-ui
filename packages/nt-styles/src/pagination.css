@@ -1,0 +1,48 @@
+@b nt-pagination {
+  border: 1px solid black;
+  @e btn {
+    padding: 6px 12px;
+    margin: 0 5px;
+    background-color: transparent;
+    color: #333333;
+    border: 1px solid #cccccc;
+    transition: border 0.15s, color 0.15s;
+    outline: none;
+    cursor: pointer;
+    @m active {
+      border: 1px solid;
+      color: var(--base_color);
+      border-color: var(--base_color);
+    }
+    @m disabled {
+      color: #888181;
+      border: 1px solid;
+      background-color: #eee;
+      border-color: #c0c4cc;
+      cursor: not-allowed;
+    }
+  }
+  @e input {
+    padding: 0 12px;
+    height: 29px;
+    width: 24px !important;
+    margin: 0 5px;
+    width: 10px;
+    background-color: transparent;
+    color: #333333;
+    border: 1px solid #cccccc;
+    transition: border 0.15s, color 0.15s;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+  }
+  @e pagesize {
+    color: #888888;
+    font-size: 12px;
+    vertical-align: middle;
+    margin: 0 10px;
+    @m active {
+      color: var(--base_color);
+    }
+  }
+}

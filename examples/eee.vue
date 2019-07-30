@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <nt-pagination :total="199" :pageSize="24"></nt-pagination>
         <nt-tree :data="treeData" @node-click="handTreeClick"></nt-tree>
         <nt-switch v-model="switchActive"></nt-switch>
         {{switchActive}}
