@@ -5,8 +5,8 @@ Vue.use(Router)
 import slidesJson from './slides';
 
 const routes = [{
-    path: '/eee',
-    component: () => import('../eee.vue')
+    path: '/',
+    component: () => import('../docs/introduce.md')
 }];
 slidesJson.forEach(item => {
     item.children.forEach(ele => {

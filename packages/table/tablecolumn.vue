@@ -13,10 +13,7 @@ export default {
         },
         label: String,
         prop: String
-    },
-    created() {
-        // console.log(this.$children)
-    },
+    }
 }
 </script>
 

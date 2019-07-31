@@ -26,7 +26,7 @@ export default {
     position: relative;
     overflow: hidden;
     -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     .nav__log {
         height: 100%;
         img {

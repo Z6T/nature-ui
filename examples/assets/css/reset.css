@@ -187,6 +187,8 @@ pre code {
        kill the margin in <p>. We need this to win. */
   margin: 0 0 1.2em 0 !important;
   display: flex;
+  letter-spacing: 2px;
+  font-size: 16px;
 }
 
 /* table, pre, dl, blockquote, q,.md  ul, .md ol {
@@ -370,4 +372,7 @@ b {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.7);
   background-color: #555;
+}
+body {
+  font-family: monospace;
 }

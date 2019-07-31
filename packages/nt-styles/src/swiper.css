@@ -1,89 +1,95 @@
-@b nt-swiper{
+@b nt-swiper {
   position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  @e wrapper {
+    position: relative;
     width: 100%;
-    height: 300px;
-    overflow: hidden;
-    @e wrapper{
-        position: relative;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    ilst-style: none;
+    & > li {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      & img {
         width: 100%;
         height: 100%;
-        padding:0;
-        margin: 0;
-       ilst-style:none;
-       & > li{
-           position: absolute;
-           width: 100%;
-           height: 100%;
-           &  img{
-               width: 100%;
-               height: 100%;
-           }
-       }
-        @e slider{
-            float: left;
-            height: 100%;
-            width: 500px;
-            text-align:center;
-            line-height:300px;
-        }
-    }
-    @e dots{
-      display:flex;
-      position: absolute;
-      bottom:0;
-      left:50%;
-      transform:translate(-50%);
-      height: 22px;
-      
-      z-index: 111;
-      & span{
-        background-clip:content-box;
-        background-color: white;
-        display:inline-block;
-        width:48px;
-        /* height: 100%; */
-        padding:10px 0;
-        margin: 0 4px;
-        cursor: pointer;
-    }
-    & .is_active{
-        background-color: var(--base_color);
       }
     }
-    @e rightArrow{
-        position: absolute;
-        font-size: 30px;
-        right: 20px;
-        top:50%;
-        transform:translateY(-50%);
-        z-index: 999999;
-        cursor: pointer;
+    @e slider {
+      float: left;
+      height: 100%;
+      width: 500px;
+      text-align: center;
+      line-height: 300px;
     }
-    @e leftArrow{
-        position: absolute;
-        left: 20px;
-        top:50%;
-        transform:translateY(-50%) rotate(180deg);
-        font-size: 30px;
-        z-index: 999999;
-        cursor: pointer;
+  }
+  @e dots {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    height: 22px;
+
+    z-index: 111;
+    & span {
+      background-clip: content-box;
+      background-color: white;
+      display: inline-block;
+      width: 48px;
+      /* height: 100%; */
+      padding: 10px 0;
+      margin: 0 4px;
+      cursor: pointer;
     }
+    & .is_active {
+      background-color: var(--base_color);
+    }
+  }
+  @e arrow {
+    height: 38px;
+    width: 38px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999999;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    text-align: center;
+    i {
+      font-size: 20px;
+      color: #fff;
+      line-height: 38px;
+    }
+  }
+  @e rightarrow {
+    right: 20px;
+  }
+  @e leftarrow {
+    left: 20px;
+  }
 }
 
 .list-enter-active {
-    transition: all 1s ease;
-    transform: translateX(0);
-  }
-  
-  .list-leave-active {
-    transition: all 1s ease;
-    transform: translateX(-100%)
-  }
-  
-  .list-enter {
-    transform: translateX(100%)
-  }
-  
-  .list-leave {
-    transform: translateX(0)
-  }
+  transition: all 1s ease;
+  transform: translateX(0);
+}
+
+.list-leave-active {
+  transition: all 1s ease;
+  transform: translateX(-100%);
+}
+
+.list-enter {
+  transform: translateX(100%);
+}
+
+.list-leave {
+  transform: translateX(0);
+}

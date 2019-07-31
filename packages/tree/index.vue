@@ -62,6 +62,14 @@ export default {
             if (!Array.isArray(childArr) || !childArr.length) return false;
             return childArr.some(c => c.checked === true);
         },
+        // 获取所有选中的节点
+        getCheckedNode() {
+            return this.getFlatChild(this.treeData).filter(item => item.checked === true)
+        },
+        // 获取叶子节点
+        getCheckedLeafNode() {
+            return this.getFlatChild(this.treeData).filter(item => item.checked === true && !item.children);
+        },
         // 取到某个数组的最末枝的叶子节点的数组
         getAllLeafNode(arr, dist = []) {
             arr.forEach(item => {
@@ -73,41 +81,41 @@ export default {
             return dist
         },
         // 如果没有checked属性，加上reactive（响应式）的属性
-        setCheckProp(data, thyp) {
+        setCheckProp(data, isInit) {
             const func = arr => {
                 if (Array.isArray(arr)) {
                     for (let i = 0; i < arr.length; i++) {
                         const ele = arr[i];
                         const childs = this.getFlatChild(ele.children);
-                        // 动态为所有节点设置checked属性
-                        if (ele.checked && ele.checked === true && !thyp) {
+                        // 动态为所有节点设置checked属性,第一次进来可以这样简单粗暴
+                        // 后续每个都要判断,因为选的可能是子节点
+                        if (ele.checked && ele.checked === true && !isInit) {
                             this.$set(ele, "checked", true);
                             // 当前节点以及子节点全是checked---简单粗暴
                             childs.forEach(child => {
                                 this.$set(child, "checked", true);
                             });
+                            continue;
                         } else if (!ele.checked && !ele.children) {
                             this.$set(ele, "checked", false);
                         }
 
                         // 判断当前节点下的所有叶子节点的状态.是全选?全不选?还是只有某些选
-                        let every = null; let everyno = null; let some = null;
+                        let every = null; let everyno = null;
                         let hasChildFlag = ele.children && ele.children.length;
                         if (hasChildFlag) {
-
                             const thisChilds = this.getAllLeafNode(ele.children);
                             every = this.isEveryChildChecked(thisChilds, true) // 是否全选
                             everyno = this.isEveryChildChecked(thisChilds, false) // 是否全不选
-                            console.log('ele.labelevery :', ele.label, every);
-                            console.log('ele.labeleveryno :', ele.label, everyno);
                             if (every) {
                                 this.$set(ele, "checked", true);
                             } else if (everyno) {
                                 this.$set(ele, "checked", false);
-                            } else if (hasChildFlag) {
+                            } else {
                                 this.$set(ele, "checked", 'some');
                             }
                         } else {
+                            // 没有子节点直接设置为本身就可以
                             this.$set(ele, "checked", ele.checked)
                         }
 
@@ -117,14 +125,14 @@ export default {
                 return arr;
             };
             this.treeData = func(data)
-            this.treeData.forEach(item => this.leafLevalObj[item.label] = this.getAllLeafNode(item.children))
-
         }
     },
     watch: {
         data: {
             handler(val) {
-                // this.setCheckProp(val);
+                if (this.showcheckbox) {
+                    this.setCheckProp(val);
+                }
             },
             deep: true,
             immediate: true

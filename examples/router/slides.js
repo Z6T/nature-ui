@@ -25,7 +25,7 @@ export default [{
         type: 'doc'
     }, {
         path: 'checkboxlist',
-        label: 'checkboxlist 复选框组',
+        label: 'checkboxlist 复选组',
         type: 'doc'
     }, {
         path: 'icon',
@@ -47,39 +47,39 @@ export default [{
         path: 'dialog',
         label: 'dialog 窗口',
         type: 'doc'
-    },{
+    }, {
         path: 'table',
         label: 'table 表格',
         type: 'doc'
-    },{
+    }, {
         path: 'loadingbar',
         label: 'loadingbar 顶部加载条',
         type: 'doc'
-    },{
+    }, {
         path: 'tree',
         label: 'tree 树形控件',
         type: 'doc'
-    },{
+    }, {
         path: 'swiper',
         label: 'swiper 轮播',
         type: 'doc'
-    },{
+    }, {
         path: 'transfer',
         label: 'transfer 穿梭框',
         type: 'doc'
-    },{
+    }, {
         path: 'pagination',
         label: 'pagination 分页',
         type: 'doc'
-    },{
+    }, {
         path: 'loading',
         label: 'loading 加载中',
         type: 'doc'
-    },{
-        path: 'tooltip',
-        label: 'tooltip 文字提示',
+    }, {
+        path: 'message',
+        label: 'message 文字提示',
         type: 'doc'
-    },{
+    }, {
         path: 'switch',
         label: 'switch 开关',
         type: 'doc'
