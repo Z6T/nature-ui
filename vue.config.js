@@ -2,7 +2,6 @@
 const markdownRender = require('markdown-it')()
 
 module.exports = {
-    publicPath: '/dist/',
     pages: {
         index: {
             entry: "examples/main.js"
