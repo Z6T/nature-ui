@@ -44,11 +44,15 @@ export default {
         display: flex;
         .nav__item {
             padding: 0 4px;
-            margin: 0 10px;
+            padding: 0 10px;
             font-size: 16px;
             line-height: 60px;
             // border-bottom: 3px solid #3399cc;
             cursor: pointer;
+            &:hover {
+                background-color: #7dabc1;
+                color: white;
+            }
         }
     }
 }

@@ -3,6 +3,10 @@ export default [{
     label: '开发指南',
     type: 'group',
     children: [{
+        path: '/',
+        label: '简介',
+        type: 'doc'
+    }, {
         path: 'install',
         label: 'install 安装',
         type: 'doc'
