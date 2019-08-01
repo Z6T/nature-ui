@@ -15,14 +15,14 @@
                 ></i>
                 <input
                     v-show="false"
-                    :id="vLeval+i"
+                    :id="fatherTree.$nodeid+vLeval+i"
                     type="checkbox"
                     :checked="item.checked===true"
                     @change="handleCheckbox(item)"
                 />
                 <label
                     v-if="fatherTree.showcheckbox"
-                    :for="vLeval+i"
+                    :for="fatherTree.$nodeid+vLeval+i"
                     :class="[item.checked===true?'icon-nt-checkbox_checked':
                     (item.checked==='some'?'icon-somecheck':'icon-nt-checkbox_unchecked'),'iconfont','nt-checkbox__icon']"
                 ></label>

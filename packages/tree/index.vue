@@ -27,7 +27,8 @@ export default {
         return {
             treeData: [],
             leafLevalObj: {},
-            checkeArr: []
+            checkeArr: [],
+            $nodeid: '' //用于标识当前组件的随机id
         };
     },
     components: { NodeTreeNode },
@@ -128,15 +129,6 @@ export default {
         }
     },
     watch: {
-        data: {
-            handler(val) {
-                if (this.showcheckbox) {
-                    this.setCheckProp(val);
-                }
-            },
-            deep: true,
-            immediate: true
-        },
         treeData: {
             handler(val) {
                 if (this.showcheckbox) {
@@ -148,6 +140,7 @@ export default {
         }
     },
     created() {
+        this.$nodeid = Math.random().toString(36).substr(3)
         if (this.showcheckbox) {
             this.setCheckProp(this.data);
         }
