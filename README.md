@@ -1,4 +1,5 @@
-# nature-ui
+# nature-ui官方网址
+[https://z6t.github.io/nature-ui/](https://z6t.github.io/nature-ui/)
 
 # 组件列表
 - Button ✔️
@@ -6,12 +7,18 @@
 - CheckboxList✔️
 - DatePicker✔️
 - Dialog✔️
+- Icon✔️
+- Loading ✔️
 - LoadingBar ✔️
+- Message ✔️
+- Pagination ✔️
+- Select ✔️
+- Skeleton ✔️
+- Swiper ✔️
+- Switch ✔️
 - Table✔️
-- Tree✔️
 - Transfer✔️
-- Select✔️
-- Swiper✔️
+- Tree✔️
 
 
 ## Project setup
@@ -19,25 +26,3 @@
 yarn install
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
