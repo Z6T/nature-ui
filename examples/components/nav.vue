@@ -4,15 +4,22 @@
             <img src="../assets/logo.png" alt />
         </div>
         <div class="nav__item__wrapper">
-            <div class="nav__item">专栏</div>
-            <div class="nav__item">github</div>
+            <div class="nav__item" @click="goZl">专栏</div>
+            <div class="nav__item" @click="goGt">github</div>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-
+    methods: {
+        goZl() {
+            window.open('https://juejin.im/user/5ad6946f51882555894a53d1/posts');
+        },
+        goGt() {
+            window.open('https://github.com/Z6T/nature-ui');
+        }
+    },
 }
 </script>
 
