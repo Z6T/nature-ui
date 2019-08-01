@@ -2,6 +2,7 @@
 const markdownRender = require('markdown-it')()
 
 module.exports = {
+    publicPath: '/nature-ui/',
     pages: {
         index: {
             entry: "examples/main.js"
