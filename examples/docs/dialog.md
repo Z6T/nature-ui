@@ -60,11 +60,11 @@ export default{
         font-size:14px;
     }
 </style>
-# dialog 弹框
+# Dialog 弹框
 
 ## 基本用法
 
-直接通过`this.$dialog([options])`调用即可，dialog的内容通过body传递，默认是唱、跳、rap、篮球、music
+<span>直接通过`this.$dialog([options])`调用即可，dialog的内容通过body传递，默认是唱、跳、rap、篮球、music
 
 ::: demo 
 ```html

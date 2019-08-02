@@ -45,7 +45,7 @@ export default{
         font-size:14px;
     }
 </style>
-# Select下拉框 复选框组
+# Select下拉框 
 
 ## 基本用法
 

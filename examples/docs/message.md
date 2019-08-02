@@ -1,4 +1,4 @@
-# Button 按钮
+# Messsage 文字提示
 
 ## 基本用法
 
