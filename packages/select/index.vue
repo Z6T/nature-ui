@@ -18,7 +18,7 @@
                 :key="key+'item'"
                 class="itemblock"
             >
-                {{item.text.slice(0,5)}}{{item.text.length>5?'...':''}}
+                {{item.t66ext.slice(0,5)}}{{item.text.length>5?'...':''}}
                 <!-- {{item.text}} -->
                 <nt-icon
                     icon="close"
@@ -29,8 +29,7 @@
         </p>
         <i class="iconfont tip" :class="showUl?'icon-arrowTop':'icon-arrowBottom'"></i>
         <ul class="nt-select__ul" :style="{top:(35+(mulSelectItems.length-1)*26)+'px'}" v-show="showUl" @mousedown="selectItemEv" ref="ulwapper">
-            <li
-                class="nt-select__ul__li"
+                 class="nt-select__ul__li"
                 :class="item.value===selectItem.value?'nt-select__ul__li_selected':''"
                 v-for="item in options"
                 :key="item.value+'_nts'"

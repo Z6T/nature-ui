@@ -30,6 +30,7 @@
     "markdown-it": "^9.0.1",
     "markdown-it-container": "^2.0.0",
     "nature-ui": "^0.3.4",
+    "typescript": "^3.5.3",
     "vue": "^2.6.10",
     "vue-markdown-loader": "^2.4.1",
     "vue-router": "^3.0.7"
@@ -54,7 +55,8 @@
     "precss": "^4.0.0",
     "sass-loader": "^7.1.0",
     "vue-markdown-loader": "^2.4.1",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "webpack-merge": "^4.2.1"
   },
   "eslintConfig": {
     "root": true,
