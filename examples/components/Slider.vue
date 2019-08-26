@@ -1,5 +1,5 @@
 <template>
-    <div class="slider" :style="{overflow:of}" @mouseenter="of='auto'"  @mouseleave="of='hidden'">
+    <div class="slider" :style="{overflow:of}" @mouseenter="of='auto'" @mouseleave="of='hidden'">
         <ul class="slider_group__wp" v-for="(item, index) in data" :key="index">
             <li class="slider_group__wp__item">
                 <p class="slider_group__wp__item__label">{{item.label}}</p>
@@ -16,9 +16,9 @@
 <script>
 export default {
     name: 'slider',
-    data(){
-        return{
-            of:'hidden'
+    data() {
+        return {
+            of: 'hidden'
         }
     },
     props: {
@@ -34,7 +34,7 @@ export default {
     width: 260px;
     height: 100%;
     box-sizing: border-box;
-    padding: 20px;
+    padding-top: 20px;
     overflow: auto;
     /* background-color: rebeccapurple; */
     & .slider_group__wp__item__label {
@@ -43,8 +43,8 @@ export default {
         font-size: 18px;
         line-height: 42px;
     }
-    & li{
-        padding:3px 0;
+    & li {
+        padding: 3px 0;
     }
     & a {
         width: 100%;
@@ -54,6 +54,7 @@ export default {
         color: #666666;
         text-decoration: none;
         cursor: pointer;
+        font-family: monospace;
     }
     & p {
         padding: 0 !important;

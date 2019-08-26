@@ -37,6 +37,16 @@
     @e item {
       line-height: 20px;
       cursor: pointer;
+      input {
+        appearance: none;
+      }
+      .icon-nt-checkbox_checked {
+        color: var(--base_color);
+      }
+      label {
+        font-size: 14px;
+        cursor: pointer;
+      }
     }
   }
 }

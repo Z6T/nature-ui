@@ -214,6 +214,18 @@
         <nt-icon icon="more"></nt-icon>
         <span class='iconitem'>more</span>
     </span>
+    <span class='iconwrapper'>
+        <nt-icon icon="success"></nt-icon>
+        <span class='iconitem'>success</span>
+    </span>
+    <span class='iconwrapper'>
+        <nt-icon icon="danger"></nt-icon>
+        <span class='iconitem'>danger</span>
+    </span>
+    <span class='iconwrapper'>
+        <nt-icon icon="warn"></nt-icon>
+        <span class='iconitem'>warn</span>
+    </span>
 </div>
 
 ```

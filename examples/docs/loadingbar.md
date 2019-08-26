@@ -20,16 +20,6 @@ export default {
 # LoadingBar 页面顶部加载条
 
 ### 基本用法
-
-调用
-
-```javascript
-this.$loadingbar.start();
-this.$loadingbar.finish();
-this.$loadingbar.error();
-```
-
-分别对应**进度条开始，进度条完成，进度条错误**。
 ::: demo 
 ```html
 <template>
@@ -57,3 +47,10 @@ export default {
 
 ```
 :::
+### Events
+
+| 事件名称 | 说明     | 回调参数 |
+| :------- | :------- | :------- |
+|this.$loadingbar.start();  | 进度条开始 |    -      |
+| this.$loadingbar.finish();  | 进度条完成 |    -      |
+| this.$loadingbar.error();  | 进度条错误 |    -      |

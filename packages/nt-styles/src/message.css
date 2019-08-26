@@ -1,0 +1,42 @@
+@b nt-message {
+  padding: 8px 15px;
+  height: 38px;
+  font-size: 14px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 99;
+  transition: opacity 0.5s;
+  animation: rotation 0.5s 1 ease;
+  @e icon {
+    margin-right: 6px;
+  }
+  @e txt {
+    line-height: 25px;
+  }
+  @m success {
+    background-color: #d0e9ff;
+    color: var(--base_color);
+  }
+  @m warn {
+    background-color: rgba(255, 184, 2, 0.2);
+    color: rgba(255, 184, 2, 1);
+  }
+  @m danger {
+    background-color: rgba(255, 87, 34, 0.4);
+    color: rgba(255, 87, 34, 1);
+  }
+}
+
+@keyframes rotation {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 80px;
+  }
+}

@@ -3,7 +3,7 @@
 ## CDN 引入
 
 
-通过 [unpkg.com/nature-ui](https://unpkg.com/nature-ui/) 可以看到nature-ui 最新版本的资源，也可以切换版本选择需要的资源，在页面上引入 js 和 css 文件即可开始使用：
+<span>通过[unpkg.com/nature-ui](https://unpkg.com/nature-ui/) 可以看到nature-ui 最新版本的资源，也可以切换版本选择需要的资源，在页面上引入 js 和 css 文件即可开始使用：
 
 ```javascript
 <script src="//vuejs.org/js/vue.min.js"></script>

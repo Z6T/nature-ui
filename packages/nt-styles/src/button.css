@@ -1,83 +1,83 @@
-@b nt-button{
-    display: inline-block;
-    margin-right: 10px;
-    color: #fff;
-    white-space: nowrap;
-    text-align: center;
-    font-weight:400;
-    /* border: none; */
+@b nt-button {
+  display: inline-block;
+  margin-right: 10px;
+  color: #fff;
+  white-space: nowrap;
+  text-align: center;
+  font-weight: 400;
+  /* border: none; */
+  border: 1px solid;
+  border-color: val(--base_border_color);
+  border-radius: 4px;
+  outline: none;
+  @e icon {
+    /* color:green; */
+  }
+  @m default {
     border: 1px solid;
-    border-color: val(--base_border_color); 
-    border-radius: 4px;
-    outline:none;
-    @e icon{
-        /* color:green; */
+    background-color: #fff;
+    border-color: val(--base_border_color);
+    color: #000;
+    cursor: pointer;
+    &:hover {
+      background-color: #ebedf0;
     }
-    @m default{
-        border: 1px solid;
-        border-color: val(--base_border_color);
-        color:#000;
-        cursor: pointer;
-        &:hover{
-            /* border-color:var(--base_color); */
-            opacity: 0.8;
-        }
+  }
+  @m primary {
+    background-color: var(--base_color);
+    cursor: pointer;
+    border: 1px solid;
+    border-color: val(--base_border_color);
+    &:hover {
+      /* border-color:var(--base_color); */
+      opacity: 0.8;
     }
-    @m primary{
-        background-color: var(--base_color);
-        cursor: pointer;
-        border: 1px solid;
-        border-color: val(--base_border_color);
-        &:hover{
-            /* border-color:var(--base_color); */
-            opacity: 0.8;
-        }
+  }
+  @m danger {
+    background-color: #ff5722;
+    cursor: pointer;
+    border: 1px solid;
+    border-color: val(--base_border_color);
+    &:hover {
+      /* border-color:var(--base_color); */
+      opacity: 0.8;
     }
-    @m danger{
-        background-color: #FF5722;
-        cursor: pointer;
-        border: 1px solid;
-        border-color: val(--base_border_color);
-        &:hover{
-            /* border-color:var(--base_color); */
-            opacity: 0.8;
-        }
+  }
+  @m warn {
+    background-color: #ffb802;
+    cursor: pointer;
+    border: 1px solid;
+    border-color: val(--base_border_color);
+    &:hover {
+      /* border-color:var(--base_color); */
+      opacity: 0.8;
     }
-    @m warn{
-        background-color: #FFB802;
-        cursor: pointer;border: 1px solid;
-        border-color: val(--base_border_color);
-        &:hover{
-            /* border-color:var(--base_color); */
-            opacity: 0.8;
-        }
+  }
+  @m normal {
+    height: 38px;
+    padding: 0 18px;
+    line-height: 38px;
+    font-size: 14px;
+  }
+  @m large {
+    height: 44px;
+    padding: 0 22px;
+    line-height: 44px;
+    font-size: 14px;
+  }
+  @m small {
+    height: 26px;
+    padding: 0 8px;
+    line-height: 24px;
+  }
+  @m long {
+    width: 100%;
+  }
+  @m disabled {
+    opacity: 0.5;
+    &:hover {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
-    @m normal{
-        height: 38px;
-        padding: 0 18px;
-        line-height: 38px;
-        font-size: 14px;
-    }
-    @m large{
-        height: 44px;
-        padding: 0 22px;
-        line-height: 44px;
-        font-size: 14px;
-    }
-    @m small{
-        height: 26px;
-        padding: 0 8px;
-        line-height: 24px;
-    }
-    @m long{
-        width:100%;
-    }
-    @m disabled{
-        opacity: 0.5;
-        &:hover{
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-    }
-  
+  }
 }
