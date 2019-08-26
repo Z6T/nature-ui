@@ -87,6 +87,8 @@ export default {
                         if (!this.searchNum) return;
                         this.curPageNum = +this.searchNum;
                         break;
+                    case '...':
+                        break;
                     default:
                         this.curPageNum = +txt;
                         break;

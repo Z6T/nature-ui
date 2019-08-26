@@ -1,7 +1,12 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "name": "nature-ui",
   "version": "1.0.0",
+=======
+  "name": "nature-ui",
+  "version": "2.1.0",
+>>>>>>> dfa4cdea8a98c419b958b23b8dfb52a2aed645cf
   "author": "zhangtao",
   "description": "基于vue的一套极简,酷炫,高质量的UI组件库",
   "main": "lib/nature-ui.umd.min.js",
@@ -16,6 +21,10 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+<<<<<<< HEAD
+=======
+    "test": "npm run compile && mocha --require babel-core/register",
+>>>>>>> dfa4cdea8a98c419b958b23b8dfb52a2aed645cf
     "commit": "git-cz",
     "lib": "vue-cli-service build --target lib --dest lib packages/index.js",
     "lib-css": "npx gulp css --gulpfile ./packages/nt-styles/gulpfile.js"
@@ -31,7 +40,10 @@
     "markdown-it": "^9.0.1",
     "markdown-it-container": "^2.0.0",
     "nature-ui": "^0.3.4",
+<<<<<<< HEAD
     "typescript": "^3.5.3",
+=======
+>>>>>>> dfa4cdea8a98c419b958b23b8dfb52a2aed645cf
     "vue": "^2.6.10",
     "vue-markdown-loader": "^2.4.1",
     "vue-router": "^3.0.7"
@@ -40,7 +52,14 @@
     "@vue/cli-plugin-babel": "^3.6.0",
     "@vue/cli-plugin-eslint": "^3.6.0",
     "@vue/cli-service": "^3.6.0",
+<<<<<<< HEAD
     "babel-eslint": "^10.0.1",
+=======
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.2.0",
+>>>>>>> dfa4cdea8a98c419b958b23b8dfb52a2aed645cf
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.16.0",
@@ -48,21 +67,35 @@
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-cssmin": "^0.2.0",
+<<<<<<< HEAD
     "gulp-rename": "^1.4.0",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
+=======
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "jasmine-core": "^3.4.0",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "mocha": "^6.2.0",
+>>>>>>> dfa4cdea8a98c419b958b23b8dfb52a2aed645cf
     "node-sass": "^4.12.0",
     "postcss-salad": "^2.0.1",
     "precss": "^4.0.0",
     "sass-loader": "^7.1.0",
     "vue-markdown-loader": "^2.4.1",
     "vue-template-compiler": "^2.6.10",
+<<<<<<< HEAD
     "webpack-merge": "^4.2.1"
+=======
+    "vue-test-utils": "^1.0.0-beta.11"
+>>>>>>> dfa4cdea8a98c419b958b23b8dfb52a2aed645cf
   },
   "eslintConfig": {
     "root": true,
     "env": {
       "node": true
+<<<<<<< HEAD
     },
     "extends": [
       "plugin:vue/essential",
@@ -126,47 +159,44 @@
         "sass-loader": "^7.1.0",
         "vue-markdown-loader": "^2.4.1",
         "vue-template-compiler": "^2.6.10"
+=======
+>>>>>>> dfa4cdea8a98c419b958b23b8dfb52a2aed645cf
     },
-    "eslintConfig": {
-        "root": true,
-        "env": {
-            "node": true
-        },
-        "extends": [
-            "plugin:vue/essential",
-            "eslint:recommended"
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "postcss-salad": {
+        "browsers": [
+          "ie > 8",
+          "last 2 versions"
         ],
-        "rules": {},
-        "parserOptions": {
-            "parser": "babel-eslint"
-        }
-    },
-    "postcss": {
-        "plugins": {
-            "autoprefixer": {},
-            "postcss-salad": {
-                "browsers": [
-                    "ie > 8",
-                    "last 2 versions"
-                ],
-                "features": {
-                    "bem": {
-                        "shortcuts": {
-                            "component": "b",
-                            "descendent": "e",
-                            "modifier": "m"
-                        },
-                        "separators": {
-                            "descendent": "__",
-                            "modifier": "_"
-                        }
-                    }
-                }
+        "features": {
+          "bem": {
+            "shortcuts": {
+              "component": "b",
+              "descendent": "e",
+              "modifier": "m"
+            },
+            "separators": {
+              "descendent": "__",
+              "modifier": "_"
             }
+          }
         }
-    },
-    "browserslist": [
-        "> 1%",
-        "last 2 versions"
-    ]
+      }
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }

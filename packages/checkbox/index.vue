@@ -19,7 +19,6 @@
 
 <script>
 import findParentMixin from "../mixins/findParent";
-import { log } from "util";
 
 export default {
     name: "nt-checkbox",
@@ -75,7 +74,6 @@ export default {
                 let gVal = this.groupValue;
                 let cVal = this.curValue;
                 if (isG) {
-                    let gValue = gVal;
                     if (this.isChecked) {
                         gVal.push(cVal);
                     } else {
